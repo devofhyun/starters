@@ -1,0 +1,36 @@
+
+.container {
+    margin: 5vh auto ;
+}
+.btn-outline-warning:hover {
+    color: #fff;
+    background-color: #feca01;
+    border-color: #feca01;
+}
+
+.paging {
+	text-align: center;
+}
+
+img.Timg {
+    height: 300;
+    width: 100%;
+}
+
+.tutoringImage {
+    height: 300;
+    /* width: 100%; */
+    overflow: hidden;
+}
+
+.title {
+	margin: 10px auto;
+}
+
+.card {
+    margin: 20px 0;
+}
+
+.rowdetail {
+    padding: 1rem 0;
+}

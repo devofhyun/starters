@@ -1,0 +1,161 @@
+/* 폰트 */
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.container {
+	margin: 5vh auto 0;
+}
+.state {
+	text-align: right;
+}
+
+
+.APList tbody tr:hover{
+    cursor: pointer;
+    background-color: rgba(0,0,0,.1);
+}
+
+.basic-row {
+	float: right;
+}
+.state .btn{
+	border: 1px solid #afafaf;
+	background-color: #fff;
+	color: #afafaf;
+}
+
+.state .btn:hover{
+	border: 1px solid #afafaf;
+	background-color: #afafaf;
+	color: #fff;
+}
+
+.interV th, .interV td {
+	font-size: 10px;
+}
+.paging {
+	text-align: center;
+	margin: 10vh auto;
+}
+
+.tutoringInfoMain,
+.interviewMain {
+    margin: 2vh auto;
+    border-top: 1px solid rgba(90, 98, 104, .4);
+    padding-top: 2vh;
+}
+
+form#delete {
+    margin: 0;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+.container.content {
+	padding: 0;
+	width: 100%;
+    margin: 0;
+	min-height: 50vh;
+}
+
+
+input#from,
+input#to {
+	width: 25%;
+	display: inline-block;
+}
+
+table{
+	text-align: center;
+}
+
+.APList td:nth-child(2) {
+    width: 50%;
+}
+
+
+input::placeholder {
+  opacity: .6;
+  font-weight: 300;
+  transform-origin: 0% 100%;
+  transition: all .2s ease-in-out;
+}
+
+input:focus, button:focus {
+	border: 1px solid rgb(90, 98, 104);
+	overflow: hidden;
+}
+
+input:focus::placeholder {
+
+  opacity: 0;
+  transition: all .2s ease ;
+}
+
+
+
+
+
+@media screen and (max-width: 760px)  {
+	article {
+	    background-color: #fff;
+	    padding: 0;
+	}
+	.APList td:nth-child(2) {
+		width: auto;
+		padding-left: 40;
+	}
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr {     
+		border-top: 1px solid #000;
+	    padding-bottom: 30px;
+    }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: 0;
+		position: relative;
+		padding-left: 50%; 
+		border-top: 0;
+	}
+
+	
+	td:last-child {
+		border-bottom: 1px solid #000; 
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		left: 0px;
+		width: auto;
+		font-weight: 900;
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "포트폴리오번호"; }
+	td:nth-of-type(2):before { content: "제목"; }
+	td:nth-of-type(3):before { content: "작성자"; }
+	td:nth-of-type(4):before { content: "좋아요"; }
+	td:nth-of-type(5):before { content: "조회수"; }
+	td:nth-of-type(6):before { content: "등록일"; }
+}

@@ -1,0 +1,26 @@
+﻿<!-- 직종 추가 -->
+			<div class="form-group">
+				<label class="col-sm-2" for="main1">직종 선택</label>
+				<!-- <input type="text"
+					name="jobSelects" id="jobSelects" class="jobSelects"
+					readonly="readonly"> -->
+				<select name="mainSelect" id="mainSelect">
+					<c:forEach items="${mainCategNamesList}" var="mainCategNamesList">
+						<!-- <option value="${mainCategNamesList.mainCategId}"
+							${mainCategNamesList.mainCategId == 1 ? 'selected="selected"' : '' }>${mainCategNamesList.mainName}</option> -->
+						<option value="${mainCategNamesList.mainCategId}"
+							${mainCategNamesList.mainCategId == 6 ? 'selected="selected"' : ''}>${mainCategNamesList.mainName}</option>
+					</c:forEach>
+				</select> <select name="middleSelect" class="middleSelect" id="middleSelect"
+					multiple="multiple" style="width: 150px;">
+					<option style="text-align: center;">중분류</option>
+					<!-- 튜티는 multiple만 추가시키면 됨 -->
+					<!-- <option></option>
+				<option></option>
+				<option></option> -->
+					<!--<c:forEach items="${middleCategNames}" var="middleCategNames">
+						<option value="${middleCategNames.middleCategId}">${middleCategNames.middleName}</option>
+					</c:forEach>-->
+				</select>
+
+			</div>

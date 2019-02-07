@@ -1,0 +1,91 @@
+dt, dd, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+}
+/* 찜하기 */
+
+/* tab */
+.nav-pills>li {
+background-color: #E0E0E0;
+margin: 1px;
+}
+.nav-link {
+color: black;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+background-color: #9E9E9E;
+}
+
+/* icon */
+i.fas.fa-user-circle {
+float: right;
+}
+.user>h6 {
+float: right;
+margin-right: 3px;
+}
+
+
+
+.selfinfo {
+    float: left;
+
+}
+.selfinfo1{
+    float: left;
+}
+
+.selfinfo2{
+float: right;
+}
+
+.yesnobtn{
+    float: right;
+}
+
+button.yesnobtn:hover {
+  background-color: #9E9E9E;
+  color: black;
+}
+.form-group dl.half {
+    outline: 1px solid red;
+    width: 100%;
+    height: 10%;
+    height: 2rem;
+    /* padding-right: 2%; */
+}
+.form-group dl.half dt{
+    width: 17%;
+    height: 100%;
+    padding-top: 0.8%;
+    text-align: center;
+    float: left;
+    outline: 1px solid green;
+}
+.form-group dl.half dd{
+    position: relative;
+    margin-left: 5%;
+} 
+.form-group dl.half dd .jobselectinput{
+    width: 29rem;
+    height: 2rem;
+    outline: 1px solid purple;
+    margin: 0 auto;
+}
+input[name="jobselectinputname"] {
+    margin: 0;
+    border: 1px solid #ddd;
+    height: 15px;
+    padding: 5px 0 4px 10px;
+}
+/* .jobsearch{
+    cursor:pointer;
+    width:20px;
+    height:20px;
+    
+} */
+.half dd .jobsearch {
+    position: absolute;
+    top: 17%;
+    right: 43%;
+}

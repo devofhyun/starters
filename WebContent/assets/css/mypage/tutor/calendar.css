@@ -1,0 +1,10 @@
+
+/* 폰트 */
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.container {
+    margin-top: 10vh;
+    width: 80%;
+}

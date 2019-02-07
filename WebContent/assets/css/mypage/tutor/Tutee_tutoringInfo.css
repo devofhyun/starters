@@ -1,0 +1,89 @@
+/* 폰트 */
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.container {
+	width: 80%;
+}
+
+.paging {
+	text-align: center;
+	margin: 10vh auto;
+}
+
+.tutoringInfoMain {
+    margin: 2vh auto;
+    border-top: 1px solid rgba(90, 98, 104, .4);
+    padding-top: 2vh;
+    width: 80%;
+}
+
+.container.content {
+	padding: 0;
+	width: 100%;
+	min-height: 50vh;
+}
+
+
+input#from,
+input#to {
+	width: 25%;
+	display: inline-block;
+}
+
+.month input{
+	margin: 0 10px;
+	overflow: hidden;
+}
+
+table{
+	table-layout: fixed;
+	text-align: center;
+}
+
+table th:nth-child(2),
+table td:nth-child(2),
+table th:nth-child(4),
+table td:nth-child(4) {
+	width: 20%;
+    text-overflow:ellipsis; /*overflow: hidden; 속성과 같이 써줘야 말줄임 기능이 적용된다.*/
+    white-space:nowrap; /*<td>보다 내용이 길경우 줄바꿈 되는것을 막아준다.*/
+    overflow: hidden;
+
+}
+
+.modalTitle {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.range {
+	margin-left: 50px;
+}
+
+input::placeholder {
+  opacity: .6;
+  font-weight: 300;
+  transform-origin: 0% 100%;
+  transition: all .2s ease-in-out;
+}
+
+input:focus, button:focus {
+	border: 1px solid rgb(90, 98, 104);
+	overflow: hidden;
+}
+
+input:focus::placeholder {
+
+  opacity: 0;
+  transition: all .2s ease ;
+}
+
+/* and (max-width: 768px) */
+
+@media screen and (min-width: 991px)  {
+	.range {
+		margin-left: -8%;
+	}
+}

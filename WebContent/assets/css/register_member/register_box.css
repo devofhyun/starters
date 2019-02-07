@@ -1,0 +1,91 @@
+/* 폰트 */
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.card {
+	cursor: pointer;
+}
+
+.container {
+	margin: 10vh auto;
+}
+.container h3{
+    font-weight: bold;
+    margin-top: 4%;
+}
+.align-items-center{
+    /* outline: 1px solid purple; */
+    margin-top: 100px;
+}
+.align-items-center .card-text{
+    font-size:20px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    /* outline: 1px solid red; */
+}
+
+.row{
+    margin-top: 5%;
+}
+.row .col-md-4 .mb-4{
+    margin-top:30px;
+    text-align: center;
+    /* outline: 2px solid blue;  */
+}
+
+.row .col-md-4 .card{
+    max-height:350px;
+    min-height:350px;
+	border-radius: 20px;
+}
+
+.row .col-md-4 .card:hover .card-text {
+	font-size: 22px;
+}
+
+.registerbox .card-text{
+    font-size: 20px;
+    font-weight: bold;
+	display: block;
+    height: 50px;
+}
+.registerbox{
+    position: relative;
+    top: 100px;
+}
+
+/* .registerbox .btn-outline-secondary{
+    top:30px;
+} */
+
+
+
+.btn-outline-secondary {
+	background-color: #fff;
+	border-color: #feca01;
+	color: #000;
+}
+
+.card:hover .btn-outline-secondary,
+.btn-outline-secondary:hover {
+	background-color: #feca01;
+	color: #fff;
+	border-color: #feca01;
+	
+}
+
+@media screen and (min-width: 775px) and (max-width:1000px){
+	button.btn.col-4.col-md-4.btn-sm.btn-outline-secondary{
+		font-size: 1.2vw;
+	}
+}
+
+@media screen and (max-width: 774px){
+	button.btn.col-4.col-md-4.btn-sm.btn-outline-secondary{
+		font-size: 1.vw;
+	}
+	
+}

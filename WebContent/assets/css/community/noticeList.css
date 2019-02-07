@@ -1,0 +1,172 @@
+/* 폰트 */
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+.input-group-append {
+    margin-left: -1px;
+    width: 120px;
+}
+
+.table thead th {
+    vertical-align: middle;
+    border-bottom: 2px solid #dee2e6;
+}
+tbody tr {
+	cursor: pointer;
+}
+
+tbody tr:hover {
+	background-color: rgba(238, 238, 238, .7);
+}
+
+table {
+	 TABLE-LAYOUT: fixed
+}
+
+form {
+    margin: auto;
+}
+
+#wbtn {
+	margin: 0 0 20px 0;
+}
+.row.search {
+	margin: 0 auto 50px;
+}
+.container.search {
+    margin: 5vh auto 0;
+}
+
+.searchbox {
+	width: 60%;
+     margin: 5% auto 0 auto;
+}
+
+
+a, a:hover {
+	color: #000;
+}
+
+.notitle {
+	width: 30%;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+th:nth-child(1), 
+td:nth-child(1),
+
+th:nth-child(2), 
+td:nth-child(2), 
+
+th:nth-child(4), 
+td:nth-child(4),
+
+th:nth-child(5),
+td:nth-child(5) {
+	width: 15%;
+	text-align: center;
+}
+
+
+.enroll .col-lg-10.col-md-10,
+.enroll .col-lg-2.col-md-2 {
+	width: 50%;
+}
+
+
+
+select.tutoringListSelect.form-control-sm {
+    width: 100%;
+}
+
+.paging {
+	text-align: center;
+	margin-bottom: 10vh;
+}
+.table td, .table th {
+    vertical-align: middle;
+}
+
+
+/* 체크박스 */
+.checks {
+	position: relative;
+} 
+
+input[type="checkbox"] { 
+/* 실제 체크박스는 화면에서 숨김 */ 
+	position: absolute; 
+	width: 1px; 
+	height: 1px; 
+	padding: 0; 
+	margin: -1px; 
+	overflow: hidden; 
+	clip:rect(0,0,0,0);
+	border: 0 
+} 
+
+input[type="checkbox"] + label { 
+	display: inline-block; 
+	position: relative; 
+	top: 5px;
+	left: 0;
+    height: 15px;
+    width: 15px;
+    background: #e6e6e6;
+	/* 글자와 체크박스 사이의 간격을 변경 */ 
+	cursor: pointer; 
+	-webkit-user-select: none;
+	 -moz-user-select: none; 
+	 -ms-user-select: none; 
+} 
+
+input[type="checkbox"]:checked + label  { 
+    background: #feca01;
+}
+
+input[type="checkbox"] + label:before { 
+/* 가짜 체크박스  */
+	content: ''; 
+	position: absolute;
+	left: 0;
+    height: 15px;
+    width: 15px;
+} 
+input[type="checkbox"]:checked + label:before{
+	left: 5px;
+    top: 2px;
+    width: 6px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    z-index:5;
+	
+}
+
+@media screen and (max-width: 991px) {
+	.container {
+	    max-width: 100%;
+	}
+	
+}
+	
+
+@media screen and (max-width: 555px) {
+	table td, table th{
+		font-size: 12px;
+	}
+	.a, .d {
+		display: none;
+	}
+} 
+
+@media screen and (max-width: 375px) {
+	table td, table th{
+		font-size: 10px;
+	}
+} 

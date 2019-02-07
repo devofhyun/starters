@@ -1,0 +1,267 @@
+		dao2 = new TutoringDAO();
+System.out.println("////////////여긴가");
+		request.setCharacterEncoding("UTF-8");
+		//      String filename = null; 
+		//      String realFolder = "";
+		//      String saveFolder = "/assets/companyImage";
+		String encType = "utf-8"; // 인코딩 정보
+		int maxSize = 1*1024*1024; // 최대 업로드될 파일 크기
+
+		MultipartRequest imageUp = null;
+
+		//      ServletContext context = request.getSession().getServletContext();
+		String savePath = request.getServletContext().getRealPath("/assets/tutoringImg"); // 저장경로
+		System.out.println(savePath); // 저장경로 확인
+		imageUp = new MultipartRequest(request, savePath, maxSize, encType, new DefaultFileRenamePolicy()); // 파일 업로드 하는 객체 생성
+		Enumeration<?> files = imageUp.getFileNames(); // input타입이 file인 파라미터를 불러옴
+
+		String tutoringImg=(String)files.nextElement(); // 자료가 많을 경우엔 while 문을 사용
+		String image1=imageUp.getFilesystemName("tutoringImg");  // 서버에 저장될 파일이름
+
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("id");
+		String mainTitle = imageUp.getParameter("mainTitle");
+		String subTitle = imageUp.getParameter("subTitle");
+		String from = imageUp.getParameter("from");
+		String to = imageUp.getParameter("to");
+//		String daySelect1 = imageUp.getParameter("daySelect");
+//		System.out.println("요일////" + daySelect1);
+
+		// 첫번째
+		/*시작시간 형변환*/
+		String s1Time1 = imageUp.getParameter("s1Time1");
+		String[] splits = s1Time1.split(":");
+		int hour=Integer.parseInt(splits[0]);
+		System.out.println("hour"+hour);
+		int min=Integer.parseInt(splits[1].substring(0,2));
+		//		int min=Integer.parseInt(splits[1]);
+		System.out.println("min"+min);
+		String ampm=splits[1].substring(splits[1].length()-2, splits[1].length());
+		//		String ampm = splits[1].substring(5, 6);
+		System.out.println(ampm);
+		if(ampm.equals("PM")){
+			hour=hour+12;
+		}
+		if(hour==12 && ampm.equals("AM")){
+			hour=0;
+		}
+		if(hour==24 && ampm.equals("PM")){
+			hour=12;
+		}
+		String startTime = String.format("%02d:%02d", hour, min);
+
+		/*끝나는 시간 형변환*/
+		String s1Time2 = imageUp.getParameter("s1Time2");
+		String[] splits2 = s1Time2.split(":");
+		int hour2=Integer.parseInt(splits2[0]);
+		int min2=Integer.parseInt(splits2[1].substring(0, 2));
+		String ampm2=splits2[1].substring(splits2[1].length()-2, splits2[1].length());
+		if(ampm2.equals("PM")){
+			hour2=hour2+12;
+		}
+		if(hour2==12 && ampm2.equals("AM")){
+			hour2=0;
+		}
+		if(hour2==24 && ampm2.equals("PM")){
+			hour2=12;
+		}
+		String endTime = String.format("%02d:%02d", hour2, min2);
+
+		 
+
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		String jobCareer = imageUp.getParameter("jobCareer");		
+		String tutoringMoney = imageUp.getParameter("tutoringMoney");		
+		String tutoringPlan = imageUp.getParameter("tutoringPlan");	
+		//		System.out.println(id+"그리고"+mainTitle+"그리고"+ subTitle+"그리고" +from+"그리고"+ to+"그리고"+  daySelect1+"그리고"+ startTime+"그리고"+endTime+"그리고"+jobCareer+"그리고"+ tutoringMoney+"그리고"+tutoringPlan+"그리고"+image1 );
+
+		boolean result1 = dao2.registerTutoring(id, mainTitle, subTitle, from, to, jobCareer, tutoringMoney, tutoringPlan,null);
+		//		System.out.println("result1" + result1);
+		TutoringVO2 result2 = dao2.getTutoringRegisterInfo(id);
+		//		System.out.println("result2.getTutoringId()"+result2.getTutoringId());
+
+		int tutoringRegisterId = result2.getTutoringId();
+
+		boolean result3 = dao2.registerTutoringImage(tutoringRegisterId, image1);
+		//		System.out.println("result3" + result3);
+		
+		boolean result4 = dao2.registerTutoringTime(tutoringRegisterId, startTime, endTime);
+		// 두번째 시간
+		/*시작시간 형변환*/
+		String s1Time3 = imageUp.getParameter("s1Time3");
+		String s1Time4 = imageUp.getParameter("s1Time4");
+		if(s1Time3 != null && s1Time4 != null){
+			String[] splits3 = s1Time3.split(":");
+			int hour3=Integer.parseInt(splits3[0]);
+			int min3=Integer.parseInt(splits3[1].substring(0,2));
+			String ampm3=splits3[1].substring(splits3[1].length()-2, splits3[1].length());
+			if(ampm3.equals("PM")){
+				hour3=hour3+12;
+			}
+			if(hour3==12 && ampm3.equals("AM")){
+				hour3=0;
+			}
+			if(hour3==24 && ampm3.equals("PM")){
+				hour3=12;
+			}
+			String startTime3 = String.format("%02d:%02d", hour3, min3);
+			/*끝나는 시간 형변환*/
+
+			String[] splits4 = s1Time2.split(":");
+			int hour4=Integer.parseInt(splits4[0]);
+			int min4=Integer.parseInt(splits4[1].substring(0, 2));
+			String ampm4=splits4[1].substring(splits4[1].length()-2, splits4[1].length());
+			if(ampm4.equals("PM")){
+				hour4=hour4+12;
+			}
+			if(hour4==12 && ampm4.equals("AM")){
+				hour4=0;
+			}
+			if(hour4==24 && ampm4.equals("PM")){
+				hour4=12;
+			}
+			String endTime4 = String.format("%02d:%02d", hour4, min4);
+
+			dao2.registerTutoringTime(tutoringRegisterId, startTime3, endTime4);
+		}
+		
+		// 세번째
+		/*시작시간 형변환*/
+		String s1Time5 = imageUp.getParameter("s1Time5");
+		String s1Time6 = imageUp.getParameter("s1Time6");
+		if(s1Time5 != null && s1Time6 != null){
+		String[] splits5 = s1Time5.split(":");
+		int hour5=Integer.parseInt(splits5[0]);
+		int min5=Integer.parseInt(splits5[1].substring(0,2));
+		String ampm5=splits5[1].substring(splits5[1].length()-2, splits5[1].length());
+		if(ampm5.equals("PM")){
+			hour5=hour5+12;
+		}
+		if(hour5==12 && ampm5.equals("AM")){
+			hour5=0;
+		}
+		if(hour5==24 && ampm5.equals("PM")){
+			hour5=12;
+		}
+		String startTime5 = String.format("%02d:%02d", hour5, min5);
+
+		/*끝나는 시간 형변환*/
+		
+		String[] splits6 = s1Time6.split(":");
+		int hour6=Integer.parseInt(splits6[0]);
+		int min6=Integer.parseInt(splits6[1].substring(0, 2));
+		String ampm6=splits6[1].substring(splits6[1].length()-2, splits6[1].length());
+		if(ampm6.equals("PM")){
+			hour6=hour6+12;
+		}
+		if(hour6==12 && ampm6.equals("AM")){
+			hour6=0;
+		}
+		if(hour6==24 && ampm6.equals("PM")){
+			hour6=12;
+		}
+		String endTime6 = String.format("%02d:%02d", hour6, min6);
+		
+		dao2.registerTutoringTime(tutoringRegisterId, startTime5, endTime6);
+		}
+		
+		//		System.out.println("result4" + result4);
+
+		String[] mainSelect = imageUp.getParameterValues("mainSelect");
+		System.out.println("////////////직종선택부분////////////////////");
+		//		System.out.println("길이"+ mainSelect.length);
+		//		if(result1 == true){
+		for(int i = 0 ; i < mainSelect.length ; i++){
+			System.out.println(mainSelect[i]+"<br/>");
+			int realmainSelect = Integer.parseInt(mainSelect[i]);
+			dao2.tutoringJobSelects(tutoringRegisterId, realmainSelect);
+			System.out.println("직종이 넣어졌대!!");
+		}
+		System.out.println("요일//// test");
+		String daySelects = imageUp.getParameter("daySelect");
+		String[] daySelectArray = daySelects.split("");
+		System.out.println(daySelectArray.length);
+		for(int i = 0 ; i < daySelectArray.length ; i++){
+		dao2.registerTutoringDay(tutoringRegisterId, daySelectArray[i]);
+		System.out.println("확인");
+		}
+		
+		
+		
+		
+		//var off = $("ul.select li.off");
+//var selected = "";
+//// console.log(off);
+//for (var i = 0; i < off.length; i++) {
+//	selected = $(off[i]).attr("value"); // 요일
+	//console.log(selected);
+	//var rStr = $("ul.select li.off").attr("dayId");
+//	var rStr = "${tvo2.day}";
+//	console.log(rStr);
+//	var afterStr = rStr.split('');
+//	//console.log(afterStr);
+//	for (k = 0; k < afterStr.length; k++) {
+//		if (selected == afterStr[k]) {
+			//console.log("맞음");
+			//console.log(off[k]);
+			//console.log(liTag);
+//			console.log(afterStr[k]);
+//			var realStr = afterStr[k];
+//			//console.log(k);
+//			$(".off[value ='" + realStr + "']").addClass('on');
+//		}
+//	}
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	var off = $("ul.select li.off");
+	//var liTag = document.getElementById("wek");
+	var selected = "";
+	// console.log(off);
+	for (var i = 0; i < off.length; i++) {
+		selected = $(off[i]).attr("value"); // 요일
+		//console.log(selected);
+		//var rStr = $("ul.select li.off").attr("dayId");
+		var rStr = "${tvo2.day}";
+		//console.log(rStr);
+		var afterStr = rStr.split('');
+		//console.log(afterStr);
+		for (k = 0; k < afterStr.length; k++) {
+			if (selected == afterStr[k]) {
+				//console.log("맞음");
+				//console.log(off[k]);
+				//console.log(liTag);
+				console.log(afterStr[k]);
+				var realStr = afterStr[k];
+				//console.log(k);
+				$(".off[value ='" + realStr + "']").addClass('on');
+			}
+		}
+	}

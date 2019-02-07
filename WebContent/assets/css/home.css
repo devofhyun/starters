@@ -1,0 +1,87 @@
+.tab-content{
+	margin-top: 50px;
+}
+
+  /* 찜하기 */
+
+  /* tab */
+  .nav-pills>li {
+    background-color: #E0E0E0;
+    margin: 1px;
+  }
+  .nav-link {
+    color: black;
+  }
+  .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: #9E9E9E;
+  }
+
+  /* icon */
+  i.fas.fa-user-circle {
+    float: right;
+  }
+  .user>h6 {
+    float: right;
+    margin-right: 3px;
+  }
+
+  /* portfolio */
+  .card {
+    border: none;
+    margin-bottom: 50px;
+  }
+  .portfolio {
+    border: 1px solid black;
+  }
+  button.btn:hover {
+    background-color: #9E9E9E;
+    color: white;
+  }
+
+  /* pagination */
+  li.page-item {
+    margin: 3px;
+    border: none;
+  }
+  a.page-link {
+    background-color: #DDD;
+      color: black;
+  }
+  a.page-link:hover {
+    background-color: #9E9E9E;
+    color: white;
+  }
+
+
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+
+.swiper-slide {
+    width: 300px;
+    margin-right: 30px;
+}
+
+.swiper-slide {
+
+}

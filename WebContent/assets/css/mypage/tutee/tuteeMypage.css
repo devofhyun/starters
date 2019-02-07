@@ -1,0 +1,86 @@
+/* 폰트 */
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+	list-style: none;
+}
+
+.container {
+	margin: 5vh auto 10vh;
+}
+
+
+
+.carousel-control-next {
+    background-image: linear-gradient(to left,rgba(0,0,0,.2) 0,rgba(255,255,255,0) 100%);
+}
+
+.carousel-control-prev {
+    background-image: linear-gradient(to right,rgba(0,0,0,.2) 0,rgba(255,255,255,0) 100%);
+}
+
+a.tutoringDetailGO div.text-center {
+    color: #000;
+    font-weight: 900;
+    width: 85%;
+    padding: 15;
+    text-overflow: ellipsis;
+    position: absolute;
+    bottom: 10;
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-shadow: -1px 0 3px #fff, 0 1px 3px #fff, 
+    					1px 0 3px #fff, 0 -1px 3px #fff;
+}
+
+.carousel .tutoringImage {
+    height: 300;
+}
+.card .tutoringImage {
+    height: 200;
+    overflow: hidden;
+}
+
+.tutoringImage img {
+    width: 100%;
+}
+p.title {
+    padding-top: 1rem;
+}
+.card .btn.btn-outline-secondary {
+	border-color: #feca01;
+}
+.card {
+    border: 0;
+}
+.paging {
+	text-align: center;
+}
+
+
+.card .btn.btn-outline-secondary:hover {
+	background-color: #feca01;
+	border-color: #feca01;
+	color: #fff;
+	
+}
+.container-fluid {
+	display: none;
+}
+
+@media screen and (max-width: 415px) {
+	.recomand {
+		display: none;
+	}
+	.container-fluid {
+		display: block;
+	}
+	.carousel-item.col-md-4 {
+	    padding: 0;
+	}
+	a.tutoringDetailGO div.text-center {
+	    width:100%;
+	}
+	
+}

@@ -1,0 +1,345 @@
+/* 폰트 */
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+.mainList {
+	margin: 0 auto;
+	margin-bottom: 100px;
+}
+body {
+  margin: 0;
+}
+
+#content h2 {
+  text-align: center
+}
+
+/* 튜터링 목록 */
+
+/* 검색 */
+.search {
+	width: 100%;
+	padding: 4vh 0;
+	margin: 0 auto;
+	margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+button.btn.btn1.dropdown-toggle {
+  background-color: #fff;
+  border: 1px solid black;
+}
+
+button.btn.btn1.dropdown-toggle:hover, button.btn.btn3.dropdown-toggle:hover {
+  color: black;
+}
+
+input.price.col-lg-3.col-md-3.col-sm-3.col-xs-3 {
+    width: 40%;
+}
+/* 검색, 등록하기 버튼 */
+.tutoringSbtn {
+	width: 100%;
+	
+}
+/* 등록하기 */
+.enroll {
+  margin-bottom: 20px;
+}
+
+.enroll p {
+	margin-bottom: 0;
+	display: inline-block;
+}
+
+.dropenroll > button.btn.btn3 {
+  float: right;
+  background-color: #fff;
+  border: 1px solid black;
+}
+
+/* portfolio */
+.card {
+  /* border: none; */
+	border: 1px solid rgba(90, 98, 104, .4);
+	border-radius: 5px;
+	margin-bottom: 50px;
+	cursor: pointer;
+	height: 30vh;
+	text-align: center;
+	overflow: hidden;
+}
+.card:hover {
+	box-shadow: 1px 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+ 
+button.btn.btn2.sortbtn2:hover {
+  background-color: #9E9E9E;
+  color: white;
+}
+
+
+.tutoringlist {
+	border-radius: 5px;
+	border: 1px solid rgba(90, 98, 104, .4);
+}
+
+/* 이미지 */
+img.Timg {
+    height: 100%;
+	transform: scale(2,2);
+}
+div.tutoringImage{
+	width: 100%;
+    height: 100%;
+	background-size : cover;
+	overflow: hidden;
+}
+/* 튜터링 제목이랑 조회수 */
+
+
+.cardtext {
+cursor: auto;
+    position: absolute;
+    font-weight: 500;
+    width: 100%;
+    /* margin: -30vh 0; */
+    text-align: left;
+    padding: 23vh 10px 0;
+    height: 101%;
+    background-image: linear-gradient(342deg,rgba(0, 0, 0, .4) 0%, rgba(0, 0, 0, .01) 100%);
+}
+
+
+.cardtext:hover,
+.card:hover a.title,
+.card:hover p.readCount{
+	background-image: linear-gradient(342deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+	color: #000;
+	text-shadow: -1px 0  3px #fff, 0 1px 3px #fff, 1px 0 3px #fff, 0 -1px 3px #fff;
+	font-weight: 500;
+}
+
+.card:hover a.soldoutbox {
+	
+	background-image: linear-gradient(342deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+	text-shadow: -1px 0  3px #000, 
+						0 1px 3px #000, 
+						1px 0 3px #000, 
+						0 -1px 3px #000;
+	font-weight: 500;
+}
+a.soldoutbox {
+	display: inline-block;
+    color: #fff!important;
+	font-weight: 900;
+    font-size: 20px;
+	width: 100px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    top: 100;
+    left: 35%;
+}
+
+
+a.title {
+    display: inline-block;
+    color: #fff;
+    font-size: 2vh;
+    width: 90%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+p.readCount {
+	cursor: context-menu;
+	color: #fff;
+}
+
+select.tutoringListSelect,
+select.portfolioListSelect {
+	float: right;
+    width: 10vh;
+	padding: 2px;
+	border-radius: 5px;
+	border: 1px solid rgba(90, 98, 104, .4);
+}
+
+
+/* 포트폴리오 css에서 검색 필터 부분 추가함 */
+.pfbtn {
+	padding: 0 30px;
+}
+
+/* 검색 필터 */
+.searchbtn {
+	margin-bottom: 20px;
+}
+.arrow > h4 {
+  float: right;
+  margin: 3px;
+}
+
+i.up.fa-angle-up {
+  display: none;
+}
+
+
+.sort {
+	margin: 3px;
+	width: 100%;
+	padding: 0;
+	display: none;
+	float: left;
+}
+form.col-12 {
+    padding: 0;
+}
+button.btn.btn2.sortbtn2 {
+  display: none;
+  float: right;
+}
+/* /검색 필터 */
+
+
+/* 등록 버튼 */
+button.btn.btn-sm.btn-outline-secondary.reg:hover {
+	border-color: #feca01;
+	background-color: #feca01;
+	color: #fff;
+}
+
+button.btn.btn-sm.btn-outline-secondary.reg {
+	border-color: #feca01;
+	background-color: #fff;
+	color: #000;
+}
+
+
+/*  */
+
+/* /튜터링 목록 */
+
+
+.wave {
+	padding-right: 10px;
+}
+
+.sort:nth-child(2),
+.sort:nth-child(3) {
+	margin-top: 20px;
+}
+
+.btnclass{
+    padding: 0;
+}
+
+/* 검색박스 끝 */
+.paging {
+	text-align: center;
+	margin: 0 auto;
+}
+/* 버튼 */
+.registertutoring {
+	float: right;
+}
+.basic-row .col-lg-10.col-md-10, .basic-row .col-lg-2.col-md-2 {
+    width: 50%;
+}
+
+.basic-row p {
+	display: inline-block;
+}
+
+.price,
+.searchinput {
+	border-radius: 5px;
+	border: 1px solid rgba(90, 98, 104, .4);
+}
+a#tutoringRegister {
+    margin: 0 10px;
+}
+
+
+@media screen and (max-width:  992px){
+	a.soldoutbox {
+	    left: 35%;
+	}
+	.container {
+	    max-width: 100%;
+	}
+	
+}
+
+
+@media screen and (max-width: 640px){
+	a#tutoringRegister {
+	    margin: 0;
+	}
+	
+	.btnclass.col-lg-1.col-md-1.col-sm-2.col-2.text-center {
+	    position: absolute;
+	    right: 40;
+	}
+	.col-lg-2.col-md-2.col-sm-4.col-4,
+	.input-group.col-lg-10.col-md-10.col-sm-8.mb-3 {
+	    padding: 0;
+	}
+	
+	.sort:nth-child(2), .sort:nth-child(3) {
+	    margin-top: 10;
+	}
+	
+	.row .col-4, .row .col-8 {
+	    padding: 0;
+	}
+	a.soldoutbox {
+	    top: 80;
+	}
+	.cardtext {
+	    padding: 22vh 10px 0;
+	}
+	a.title {
+	    font-size: 18px;
+	}
+	.search {
+		border:0;
+	}
+	
+}
+
+.input input[type="radio"]{
+    position: absolute;
+    margin-left: -50000px;
+}
+
+.input input[type="radio"]:before {
+    content: "";
+    position: absolute;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    top: 5;
+    left: 3;
+    margin-left: 50000px;
+    width: 15px;
+    height: 15px;
+    background-color: #eee;
+}
+
+.input input[type="radio"]:checked + label:before {
+    content: '';
+    width: 9;
+    height: 9;
+    background-color: #feca01;
+    position: absolute;
+    border-radius: 50%;
+    top: 8;
+    margin-left: -14;
+}
+
+.input label {
+    padding-left: 20;
+}

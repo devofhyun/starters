@@ -1,0 +1,244 @@
+.intro {
+	flex-direction: row;
+    flex-wrap: wrap;
+	height:100px;
+	overflow: hidden;  
+	transition:.5s;
+}
+
+.intro div{
+	min-width: 16.66666%;
+    height: 100px;
+    text-align: center;
+    background-color: #eee;  
+    transition: .1s;
+	background-size: cover;
+	cursor: pointer;
+}
+.intro div:nth-child(1){background-image:url(../image/튜터링.jpg);}
+.intro div:nth-child(2){background-image:url(../image/포폴.jpg);}
+.intro div:nth-child(3){background-image:url(../image/면접.jpg);}
+.intro div:nth-child(4){background-image:url(../image/실시간톡.jpg);}
+.intro div:nth-child(5){background-image:url(../image/일지.jpg);}
+.intro div:nth-child(6){background-image:url(../image/후기.jpg);}
+
+.intro div span {
+	line-height: 3.4;
+    font-size: 30;
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #fff;
+    background-color: rgba(0,0,0,.5);
+}
+.intro div span:hover {
+	line-height: 3.2;
+    font-size: 32;
+}
+
+.intro div.active{
+	min-width: 100%;
+	transition:.5s;
+}
+
+.introduce > div{
+	display: none;
+	width: 100%;
+    min-height: 600;
+	transition:.5s;
+}
+.introduce > div > div.container{
+	text-align: center;
+	padding: 70!important;
+}
+
+.introduce > div > div.container img {
+	padding: 20px 0;
+}
+
+.introduce div.active {
+	display: block;
+}
+	.introduce > div > div.container h4{	
+	    font-weight: 900;
+	}
+	.introduce > div > div.container span{
+	    text-decoration: underline;
+	    text-decoration-color: #feca01;	    
+	    display: block;
+	    width: 100%;
+	}
+
+
+
+
+@media screen and (min-width: 845px) {
+	.introduce > div > div.container h4{	
+	    font-size: 50px;
+	}
+	.introduce > div > div.container span{
+	    font-size: 20px;
+
+	}
+}
+
+@media screen and (max-width: 844px) {	
+	.intro {
+		height:200px;
+	}
+	.intro div{
+		min-width: 33.33333333%;
+		line-height: 4.7;
+		font-size: 20;
+	}
+	
+}
+
+@media screen and (max-width: 415px) {
+	.intro {
+		height:200px;
+	}
+	.intro div span {
+		line-height: 6.8;
+    	font-size: 15;
+	}	
+	.intro div span:hover {
+		line-height: 6.2;
+    	font-size: 17;
+	}
+	.intro div{
+		min-width: 33.33333333%;
+	}
+	.introduce > div{
+	    min-height: 300;
+	}
+	.introduce > div > div.container{
+		text-align: center;
+		padding: 20!important;
+	}
+	.introduce > div > div.container img {
+		padding: 20px 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+	background-color: white;
+}
+div {
+	display: block;
+}
+
+.subt {
+	width: 100%;
+	background: #404244;
+}
+
+.sub_top03 img {
+	height: 220px;
+	overflow: hidden;
+
+}
+.container img {
+	width:100%;
+}
+.subtit3 {
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+#aboutSignup {
+	padding: 100px 0;
+}
+
+.container .container-fluid {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.row {
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+#aboutSignup h2 {
+	margin: 0;
+	font-size: 28px;
+	text-align: center;
+}
+
+hr.yellow {
+	width: 152px;
+	border: none;
+	height: 2px;
+	color: #feca01;
+	background-color: #feca01;
+	margin: 30px auto;
+	box-sizing: content-box;
+}
+
+#aboutSignup .condition {
+	text-align: center;
+	line-height: 1.7;
+	font-size: 16px;
+	margin: 0 0 10px;
+	box-sizing: border-box;
+}
+
+#aboutSignup .already {
+	margin-top: 20px;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+
+#aboutSignup .signup-btn {
+	text-align: center;
+}
+
+#aboutSignup .btn-border-blue {
+	border: 2px solid #4a9cf3;
+	padding: 15px;
+	font-size: 16px;
+	width: 214px;
+	margin: 0 10px;
+	border-radius: 4px;
+	height: 48px;
+	line-height: 1;
+	display: inline-block;
+	font-weight: 400;
+	text-align: center;
+	vertical-align: middle;
+}

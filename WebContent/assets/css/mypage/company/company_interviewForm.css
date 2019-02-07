@@ -1,0 +1,296 @@
+#content h2 {
+  text-align: center
+}
+.container {
+	margin: 5vh auto 10vh;
+}
+
+span.pd{
+	    line-height: 2.5;
+}
+
+span.days:after {
+	content: " , "
+}
+span.job:after {
+	content: " / "
+}
+span.days:last-child:after, 
+span.job:last-child:after {
+	content: " "
+}
+
+.interviewForm {
+  width: 100%;
+}
+
+.interviewForm h2 {
+  margin-bottom: 10px;
+}
+
+.interviewFormBox {
+  margin: 30px 0;
+
+}
+
+.interviewForm h6 {
+    display: inline;
+    float: left;
+    font-weight: bold;
+    width: 150;
+    min-width: 100px;    
+    padding: .75rem;
+}
+
+.fs-wrap {
+    line-height: 2;
+}
+.row,
+.form-inline.inputTime,
+#sample .inputTime{
+   padding: 0 0 0 .85rem;
+}
+#insert .form-inline.inputTime {
+	padding:0;
+}
+.form-group {
+  width: 90%;
+  padding: 10px 0;
+}
+
+
+.date input {
+	width: 100px;
+	text-align: center;
+	float: left;
+}
+
+.date p {
+	float: left;
+	font-weight: bold;
+	margin: 0 10px;
+}
+
+.day ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.compinfo th {
+    width: 10%;
+}
+.compinfo th:first-child {
+	width: 135px;
+}
+
+.day ul li {
+	width: 30px;
+	float: left;
+	text-align: center;
+	color: #bbb;
+	font-weight: normal;
+	line-height: 200%;
+	cursor: pointer;
+	margin-right: 5px;
+}
+
+.day ul li a {
+	display: block;
+}
+
+.day ul li.off {
+	width: 33px;
+	height: 33px;
+	background: #e9e9e9;
+	color: #999;
+	border-radius: 40px;
+}
+
+.day ul li.on {
+	width: 33px;
+	height: 33px;
+	background: #feca01;
+	color: #fff;
+	border-radius: 40px;
+}
+
+.day input {
+	width: 300px;
+	margin-left: 20px;
+}
+#sample {
+	padding: 0;
+}
+#sample1 {
+	list-style-type: none;
+	padding: 0;
+	margin-top: 10px;
+	width: 100%;
+}
+
+#sample1 input {
+	width: 100px;
+	text-align: center;
+	margin-right: 10px;
+}
+
+#sample1 input:nth-child(2) {
+	width: 100px;
+	text-align: center;
+	margin-left: 10px;
+}
+
+#sample1 p {
+	float: left;
+}
+
+#insert #sample1 {
+	
+	margin: 0;
+}
+
+.fas {
+    line-height: 2px;
+}
+
+.onA,
+.onA:hover,
+#cd:hover {
+	color: #feca01;
+    margin: 0 0 15px 0;
+}
+
+#cd{
+    margin: 0 0 15px 0;
+	color: #c0c0c0;
+}
+.subbtn {
+	text-align: right;
+}
+
+button.btn.btn-outline-secondary.btn-md {
+	border-color:#feca01;
+	color: #000;
+}
+
+button.btn.btn-outline-secondary.btn-md:hover {
+	border-color:#feca01;
+	background-color:#feca01;
+	color: #fff;
+}
+
+@media screen and (min-width: 768px){
+	.container {
+	    margin: auto;
+	    max-width: 90%;
+	}
+	
+}
+
+@media screen and (min-width:576px) and (max-width: 860px) {
+
+     .text {
+        padding: 10px 0;
+        text-align: center;
+     }
+}
+
+@media screen and (max-width: 878px){
+	.compinfo tr{
+		border-bottom: 1px solid #dee2e6;
+	    width: 100%;
+    }
+	.compinfo th:first-child, .compinfo th, .compinfo td {
+	    display: inline-block;
+	    border: 0;
+	}
+	.compinfo th:first-child,
+	.compinfo th {
+	    width: 150px;
+	}
+	.compinfo td {
+		width: 70%;
+		margin-right: auto;
+	}
+	div#Week1 {
+		padding: .75rem 0;
+	}
+	.day ul li.off,
+	.day ul li.on{
+	    width: 25;
+	    height: 25;
+	}
+	.day ul li a{
+	    font-size: 13;
+	    line-height: 2;
+	}
+	.date input{
+		padding: .4rem 0
+	}
+	.date p {
+	    padding: .2rem 0;
+	}
+	#sample1 input:nth-child(3){
+	    margin-left: 10;
+	}
+	#sample1 input:nth-child(2){
+	    margin-left: 0;
+	}
+	#sample1 input:nth-child(2),
+	#sample1 input {
+	    width: 80;
+	}
+	.onA, .onA:hover, #cd, #cd:hover {
+		margin: 0;
+	}
+	#sample1 {
+	    width: auto;
+	}
+	input#inputYearPay {
+	    max-width: 150;
+	    display: inline-block;
+	}
+	.form-group {
+	    width: 100%;
+	}
+	.text {
+	    width: auto;
+	    padding: .4rem 0;
+	}
+}
+
+@media screen and (max-width: 575px){	
+	.compinfo tr{
+		border-bottom: 1px solid #dee2e6;
+	    width: 100%;
+    }
+    .compinfo th:first-child, .compinfo th {
+	    width: 25%;
+	    padding: 10px 0;
+	}
+	
+	.compinfo td{
+		width: 60%;
+	}
+	.row, .form-inline.inputTime, #sample .inputTime {
+	    padding: 0;
+	}
+	.date input {
+    	width: 90;
+    }
+    .form-group {
+	    width: 100%;
+	    margin-right: -15px;
+	    margin-left: -15px;
+	}
+}
+
+
+
+.fas.fa-caret-up,
+.fas.fa-caret-down {
+    line-height: inherit;
+    display: block;
+}

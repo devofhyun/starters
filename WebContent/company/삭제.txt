@@ -1,0 +1,971 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
+	<div class="mainimg">
+		<img src="https://pbs.twimg.com/media/C47Cs-xVMAA1QNj.jpg" />
+	</div>
+	<div class="subimg">
+		<img
+			src="https://jpassets.jobplanet.co.kr/production/uploads/company_photo/filename/603/cropped_medium_2015111231.jpg" />
+		<img
+			src="http://mblogthumb4.phinf.naver.net/20160421_47/apcsoul_1461217483388kq99r_JPEG/6.JPG?type=w2" />
+		<img
+			src="http://image.chosun.com/sitedata/image/201606/24/2016062402049_0.jpg" />
+		<img
+			src="https://jpassets.jobplanet.co.kr/production/uploads/job/content/image/842/medium_2015111205.jpg" />
+	</div>
+	<div class="table" id="compinfo">
+		<table>
+			<colgroup>
+				<col class="col1" />
+				<col class="col2" />
+				<col class="col3" />
+				<col class="col4" />
+			</colgroup>
+			<tbody>
+				<tr>
+					<th scope="row">기업명</th>
+					<td>${CompanyVO.name}</td>
+					<th scope="row">대표자명</th>
+					<td>${CompanyVO.gender}</td>
+				</tr>
+				<tr>
+					<th scope="row">업종</th>
+					<td colspan="3">${CompanyVO.email}</td>
+				</tr>
+				<tr>
+					<th scope="row">사원수</th>
+					<td colspan="3">${CompanyVO.phoneNum}</td>
+				</tr>
+				<tr>
+					<th scope="row">대표전화</th>
+					<td colspan="3">${CompanyVO.phoneNum}</td>
+				</tr>
+				<tr>
+					<th scope="row">주소</th>
+					<td colspan="3">${CompanyVO.address}</td>
+				</tr>
+				<tr>
+					<th scope="row">홈페이지</th>
+					<td colspan="3"><a href="https://linepluscorp.com/">${CompanyVO.companyUrl}</a></td>
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+	
+	private String tutoringListDetailAction(HttpServletRequest request) throws ServletException, IOException{
+		dao2 = new TutoringDAO();
+
+		int num=Integer.parseInt(request.getParameter("num"));
+		//		String num1=request.getParameter("num");
+		//		System.out.println("num1"+ num1);
+		//		int num=Integer.parseInt(num1);
+		System.out.println("num"+ num);
+		TutoringVO2 tvo2 = dao2.tutoringDetail(num);
+		request.setAttribute("tvo2", tvo2);
+		System.out.println("tvo2" + tvo2);
+
+		HttpSession session = request.getSession(true);
+		session.setAttribute("num", num);
+
+		return "tutoring/TutoringDetail.jsp";
+	}
+	
+	
+	
+	
+	private String memberIdCheck(HttpServletRequest request) {
+		dao = new MemberDAO();
+		String id = request.getParameter("id");
+		if(!dao.memberIdCheck(id)) //회원가입뿐만아니라 재인증할때도 필요하기 때문에 !을 사용한다.
+			request.setAttribute("hasId", "사용 가능 아이디");
+		else 
+			request.setAttribute("hasId", "사용 불가 아이디");
+		//		System.out.println(id);
+		return "memberIdCheck.jsp";
+	}
+	
+	private String TuteeLookJobMiddleCateg(HttpServletRequest request) {
+		dao3 = new JobSelectDAO();
+		String mainId = request.getParameter("main");
+		int mainId2 = Integer.parseInt(mainId);
+		System.out.println("mainId2"+mainId2);
+
+		ArrayList<MiddleCategVO> middleCategNames = dao3.middleCategNames(mainId2);
+
+		//		int main = Integer.parseInt(request.getParameter("mainSelect3"));
+		//		ArrayList<MiddleCategVO> middleCategNames = dao3.middleCategNames(main);
+		//		
+		request.setAttribute("middleCategNames", middleCategNames);
+		//
+		System.out.println(middleCategNames);
+		//		HttpSession session = request.getSession();
+		//		String middleCategNames = (String)session.getAttribute("middleCategNames");
+		//		
+		return "registerTuteeMiddle.jsp";
+	}
+	
+	private String tutoringListDetailAction(HttpServletRequest request) throws ServletException, IOException{
+		dao2 = new TutoringDAO();
+
+		int num=Integer.parseInt(request.getParameter("num"));
+		//		String num1=request.getParameter("num");
+		//		System.out.println("num1"+ num1);
+		//		int num=Integer.parseInt(num1);
+		System.out.println("num"+ num);
+		TutoringVO2 tvo2 = dao2.tutoringDetail(num);
+		request.setAttribute("tvo2", tvo2);
+		System.out.println("tvo2" + tvo2);
+
+		HttpSession session = request.getSession(true);
+		session.setAttribute("num", num);
+
+		return "tutoring/TutoringDetail.jsp";
+	}
+	
+	
+	-- 대분류직종카테고리정보
+CREATE TABLE main_category (
+	main_categ_id INT(4)      NOT NULL, -- 대분류직종카테고리_일련번호
+	main_name     VARCHAR(40) NOT NULL  -- 대분류
+);
+
+-- 대분류직종카테고리정보
+ALTER TABLE main_category
+	ADD CONSTRAINT PK_main_category -- 대분류직종카테고리정보 기본키
+		PRIMARY KEY (
+			main_categ_id -- 대분류직종카테고리_일련번호
+		);
+
+ALTER TABLE main_category
+	MODIFY COLUMN main_categ_id INT(4) NOT NULL AUTO_INCREMENT;
+
+-- 중분류직종카테고리정보
+CREATE TABLE middle_category (
+	middle_categ_id INT(4)      NOT NULL, -- 중분류_일련번호
+	middle_name     VARCHAR(40) NOT NULL, -- 중분류
+	main_categ_id   INT(4)      NOT NULL  -- 대분류직종카테고리_일련번호
+);
+
+-- 중분류직종카테고리정보
+ALTER TABLE middle_category
+	ADD CONSTRAINT PK_middle_category -- 중분류직종카테고리정보 기본키
+		PRIMARY KEY (
+			middle_categ_id -- 중분류_일련번호
+		);
+
+ALTER TABLE middle_category
+	MODIFY COLUMN middle_categ_id INT(4) NOT NULL AUTO_INCREMENT;
+
+-- 직종선택
+CREATE TABLE job_select (
+	select_id       INT(4)      NOT NULL, -- 직종선택_일련번호
+	member_id       VARCHAR(20) NOT NULL, -- 아이디
+	middle_categ_id INT(4)      NOT NULL  -- 중분류_일련번호
+);
+
+-- 직종선택
+ALTER TABLE job_select
+	ADD CONSTRAINT PK_job_select -- 직종선택 기본키
+		PRIMARY KEY (
+			select_id -- 직종선택_일련번호
+		);
+
+ALTER TABLE job_select
+	MODIFY COLUMN select_id INT(4) NOT NULL AUTO_INCREMENT;
+
+-- 튜터추가정보
+CREATE TABLE tutor_info (
+	member_id VARCHAR(20) NOT NULL, -- 아이디
+	resume    VARCHAR(20) NOT NULL, -- 이력서파일
+	portfolio VARCHAR(20) NULL      -- 포트폴리오파일
+);
+
+-- 튜터추가정보
+ALTER TABLE tutor_info
+	ADD CONSTRAINT PK_tutor_info -- 튜터추가정보 기본키
+		PRIMARY KEY (
+			member_id -- 아이디
+		);
+
+-- 튜터튜티_회원정보
+CREATE TABLE member_info (
+	member_id     VARCHAR(20)             NOT NULL, -- 아이디
+	name          VARCHAR(20)             NOT NULL, -- 이름
+	passwd        VARCHAR(20)             NOT NULL, -- 비밀번호
+	birth         VARCHAR(10)             NOT NULL, -- 생년월일
+	gender        VARCHAR(2)              NOT NULL, -- 성별
+	email         VARCHAR(40)             NOT NULL, -- 이메일
+	phone_num     VARCHAR(15)             NOT NULL, -- 전화번호
+	intro         TEXT                    NULL,     -- 자기소개
+	register_date TIMESTAMP DEFAULT NOW() NOT NULL  -- 가입일시
+);
+
+-- 튜터튜티_회원정보
+ALTER TABLE member_info
+	ADD CONSTRAINT PK_member_info -- 튜터튜티_회원정보 기본키
+		PRIMARY KEY (
+			member_id -- 아이디
+		);
+
+-- 튜터링정보
+CREATE TABLE tutoring_info (
+	tutoring_id INT(4)                  NOT NULL, -- 튜터링정보_일련번호
+	tutor_id    VARCHAR(20)             NOT NULL, -- 튜터_아이디
+	title       VARCHAR(50)             NOT NULL, -- 제목
+	subtitle    VARCHAR(50)             NULL,     -- 소제목
+	start_date  DATE                    NOT NULL, -- 시작날짜
+	end_date    DATE                    NOT NULL, -- 종료날짜
+	day         VARCHAR(10)             NOT NULL, -- 요일
+	career      INT(2)                  NOT NULL, -- 경력
+	price       INT(10)                 NOT NULL, -- 금액
+	contents    TEXT                    NOT NULL, -- 내용
+	count       INT(4)                  NULL     DEFAULT 0, -- 조회수
+	upload_date TIMESTAMP DEFAULT NOW() NOT NULL  -- 등록일시
+);
+
+-- 튜터링정보
+ALTER TABLE tutoring_info
+	ADD CONSTRAINT PK_tutoring_info -- 튜터링정보 기본키
+		PRIMARY KEY (
+			tutoring_id -- 튜터링정보_일련번호
+		);
+
+ALTER TABLE tutoring_info
+	MODIFY COLUMN tutoring_id INT(4) NOT NULL AUTO_INCREMENT;
+
+-- 튜터링신청정보
+CREATE TABLE tutoring_apply_info (
+	tutoring_apply_id INT(4)                  NOT NULL, -- 튜터링신청정보_일련번호
+	tutoring_id       INT(4)                  NOT NULL, -- 튜터링정보_일련번호
+	tutee_id          VARCHAR(20)             NOT NULL, -- 튜티_아이디
+	apply_date        TIMESTAMP DEFAULT NOW() NOT NULL, -- 신청날짜
+	payment_info      VARCHAR(20)             NOT NULL, -- 결제정보
+	price             INT(8)                  NOT NULL  -- 튜터링금액
+);
+
+-- 튜터링신청정보
+ALTER TABLE tutoring_apply_info
+	ADD CONSTRAINT PK_tutoring_apply_info -- 튜터링신청정보 기본키
+		PRIMARY KEY (
+			tutoring_apply_id -- 튜터링신청정보_일련번호
+		);
+
+ALTER TABLE tutoring_apply_info
+	MODIFY COLUMN tutoring_apply_id INT(4) NOT NULL AUTO_INCREMENT;
+
+-- 찜하기
+CREATE TABLE tutoringlike (
+	tutee_id    VARCHAR(20) NOT NULL, -- 튜티_아이디
+	tutoring_id INT(4)      NOT NULL  -- 튜터링정보_일련번호
+);
+
+-- 찜하기
+ALTER TABLE tutoringlike
+	ADD CONSTRAINT PK_tutoringlike -- 찜하기 기본키
+		PRIMARY KEY (
+			tutee_id,    -- 튜티_아이디
+			tutoring_id  -- 튜터링정보_일련번호
+		);
+
+-- 후기게시판
+CREATE TABLE review (
+	review_id         INT(4)                  NOT NULL, -- 후기게시판_일련번호
+	tutoring_apply_id INT(4)                  NOT NULL, -- 튜터링신청정보_일련번호
+	review_title      VARCHAR(50)             NOT NULL, -- 후기제목
+	review_content    TEXT                    NOT NULL, -- 후기내용
+	review_count      INT(4)                  NULL     DEFAULT 0, -- 조회수
+	review_date       TIMESTAMP DEFAULT NOW() NOT NULL  -- 등록일시
+);
+
+-- 후기게시판
+ALTER TABLE review
+	ADD CONSTRAINT PK_review -- 후기게시판 기본키
+		PRIMARY KEY (
+			review_id -- 후기게시판_일련번호
+		);
+
+ALTER TABLE review
+	MODIFY COLUMN review_id INT(4) NOT NULL AUTO_INCREMENT;
+
+-- 기업_회원정보
+CREATE TABLE company_info (
+	company_id        VARCHAR(20)             NOT NULL, -- 아이디
+	name              VARCHAR(20)             NOT NULL, -- 이름
+	passwd            VARCHAR(20)             NOT NULL, -- 비밀번호
+	email             VARCHAR(40)             NOT NULL, -- 이메일
+	phone_num         VARCHAR(15)             NOT NULL, -- 전화번호
+	address           VARCHAR(100)            NOT NULL, -- 주소
+	company_url       VARCHAR(50)             NOT NULL, -- 홈페이지주소
+	company_range     VARCHAR(20)             NOT NULL, -- 회사규모
+	company_birth     DATE                    NOT NULL, -- 설립연도
+	company_introduce TEXT                    NULL,     -- 기업소개
+	register_date     TIMESTAMP DEFAULT NOW() NOT NULL  -- 가입일시
+);
+
+-- 기업_회원정보
+ALTER TABLE company_info
+	ADD CONSTRAINT PK_company_info -- 기업_회원정보 기본키
+		PRIMARY KEY (
+			company_id -- 아이디
+		);
+
+-- 포트폴리오
+CREATE TABLE portfolio (
+	portfolio_id     INT(4)                  NOT NULL, -- 포트폴리오_일련번호
+	member_id        VARCHAR(20)             NOT NULL, -- 튜티_아이디
+	portfolio_title  VARCHAR(50)             NOT NULL, -- 제목
+	portfolio_method VARCHAR(20)             NOT NULL, -- 구현방식
+	portfolio_url    VARCHAR(50)             NULL,     -- URL
+	portfolio_file   VARCHAR(20)             NULL,     -- 첨부파일
+	portfolio_text   TEXT                    NULL,     -- 부가설명
+	portfolio_count  INT(4)                  NULL     DEFAULT 0, -- 조회수
+	upload_date      TIMESTAMP DEFAULT NOW() NOT NULL  -- 등록일시
+);
+
+-- 포트폴리오
+ALTER TABLE portfolio
+	ADD CONSTRAINT PK_portfolio -- 포트폴리오 기본키
+		PRIMARY KEY (
+			portfolio_id -- 포트폴리오_일련번호
+		);
+
+ALTER TABLE portfolio
+	MODIFY COLUMN portfolio_id INT(4) NOT NULL AUTO_INCREMENT;
+
+-- 포트폴리오_직종선택
+CREATE TABLE portfolio_job_selects (
+	portfolio_select_id INT(4) NOT NULL, -- 포트폴리오_직종선택_일련번호
+	portfolio_id        INT(4) NOT NULL, -- 포트폴리오_일련번호
+	middle_categ_id     INT(4) NOT NULL  -- 중분류_일련번호
+);
+
+-- 포트폴리오_직종선택
+ALTER TABLE portfolio_job_selects
+	ADD CONSTRAINT PK_portfolio_job_selects -- 포트폴리오_직종선택 기본키
+		PRIMARY KEY (
+			portfolio_select_id -- 포트폴리오_직종선택_일련번호
+		);
+
+ALTER TABLE portfolio_job_selects
+	MODIFY COLUMN portfolio_select_id INT(4) NOT NULL AUTO_INCREMENT;
+
+-- 면접_직종선택
+CREATE TABLE interview_job_selects (
+	interview_select_id INT(4) NOT NULL, -- 면접_직종선택_일련번호
+	middle_categ_id     INT(4) NOT NULL, -- 중분류_일련번호
+	interview_id        INT(4) NOT NULL  -- 면접_일련번호
+);
+
+-- 면접_직종선택
+ALTER TABLE interview_job_selects
+	ADD CONSTRAINT PK_interview_job_selects -- 면접_직종선택 기본키
+		PRIMARY KEY (
+			interview_select_id -- 면접_직종선택_일련번호
+		);
+
+ALTER TABLE interview_job_selects
+	MODIFY COLUMN interview_select_id INT(4) NOT NULL AUTO_INCREMENT;
+
+-- 찜하기
+CREATE TABLE company_like (
+	company_id   VARCHAR(20) NOT NULL, -- 기업_아이디
+	portfolio_id INT(4)      NOT NULL  -- 포트폴리오_일련번호
+);
+
+-- 찜하기
+ALTER TABLE company_like
+	ADD CONSTRAINT PK_company_like -- 찜하기 기본키
+		PRIMARY KEY (
+			company_id,   -- 기업_아이디
+			portfolio_id  -- 포트폴리오_일련번호
+		);
+
+-- 면접신청
+CREATE TABLE interview (
+	interview_id         INT(4)                  NOT NULL, -- 면접_일련번호
+	member_id            VARCHAR(20)             NULL,     -- 아이디
+	company_id           VARCHAR(20)             NOT NULL, -- 기업_아이디
+	interview_start_date DATE                    NOT NULL, -- 면접가능 시작 날짜
+	COL                  DATE                    NULL,     -- 면접가능 종료 날짜
+	interview_year_money VARCHAR(15)             NOT NULL, -- 연봉
+	upload_date          TIMESTAMP DEFAULT NOW() NOT NULL  -- 면접신청등록일자
+);
+
+-- 면접신청
+ALTER TABLE interview
+	ADD CONSTRAINT PK_interview -- 면접신청 기본키
+		PRIMARY KEY (
+			interview_id -- 면접_일련번호
+		);
+
+ALTER TABLE interview
+	MODIFY COLUMN interview_id INT(4) NOT NULL AUTO_INCREMENT;
+
+-- 튜터링 일지
+CREATE TABLE tutoring_record (
+	tutoring_record_id INT(4)      NOT NULL, -- 튜터링일지_일련번호
+	tutoring_apply_id  INT(4)      NOT NULL, -- 튜터링신청정보_일련번호
+	tutoring_date      VARCHAR(15) NOT NULL, -- 튜터링 날짜
+	tutoring_feedback  TEXT        NULL,     -- 튜터_피드백내용
+	tutoring_record    TEXT        NULL,     -- 튜티_일지
+	tutor_file         VARCHAR(20) NULL,     -- 튜티_첨부파일
+	tutee_file         VARCHAR(20) NULL      -- 튜터_첨부파일
+);
+
+-- 튜터링 일지
+ALTER TABLE tutoring_record
+	ADD CONSTRAINT PK_tutoring_record -- 튜터링 일지 기본키
+		PRIMARY KEY (
+			tutoring_record_id -- 튜터링일지_일련번호
+		);
+
+ALTER TABLE tutoring_record
+	MODIFY COLUMN tutoring_record_id INT(4) NOT NULL AUTO_INCREMENT;
+
+-- 공지사항
+CREATE TABLE notice_info (
+	notice_id      INT(4)                  NOT NULL, -- 공지사항_일련번호
+	notice_title   VARCHAR(50)             NOT NULL, -- 공지사항_제목
+	notice_content TEXT                    NOT NULL, -- 공지사항_내용
+	notice_writer  VARCHAR(50)             NOT NULL, -- 공지사항_글쓴이
+	notice_ip      VARCHAR(30)             NOT NULL, -- 공지사항_글쓴이_ip
+	notice_hits    INT(4)                  NULL     DEFAULT 0, -- 공지사항_조회수
+	notice_date    TIMESTAMP DEFAULT NOW() NOT NULL  -- 공지사항_등록일시
+);
+
+-- 공지사항
+ALTER TABLE notice_info
+	ADD CONSTRAINT PK_notice_info -- 공지사항 기본키
+		PRIMARY KEY (
+			notice_id -- 공지사항_일련번호
+		);
+
+ALTER TABLE notice_info
+	MODIFY COLUMN notice_id INT(4) NOT NULL AUTO_INCREMENT;
+
+-- QNA
+CREATE TABLE qna_info (
+	qna_id       INT(4)                  NOT NULL, -- QNA_일련번호
+	qna_title    VARCHAR(50)             NOT NULL, -- QNA_제목
+	qna_content  TEXT                    NOT NULL, -- QNA_내용
+	qna_writer   VARCHAR(50)             NOT NULL, -- QNA_글쓴이
+	qna_ip       VARCHAR(30)             NOT NULL, -- QNA_글쓴이IP
+	qna_passwd   VARCHAR(20)             NULL,     -- QNA_비밀번호
+	qna_hits     INT(4)                  NULL     DEFAULT 0, -- QNA_조회수
+	qna_ref      INT(3)                  NOT NULL, -- QNA_그룹번호
+	qna_re_step  INT(3)                  NOT NULL, -- QNA_순서
+	qna_re_level INT(3)                  NOT NULL, -- QNA_레벨
+	qna_date     TIMESTAMP DEFAULT NOW() NOT NULL  -- QNA_작성날짜
+);
+
+-- QNA
+ALTER TABLE qna_info
+	ADD CONSTRAINT qna -- QNA 기본키
+		PRIMARY KEY (
+			qna_id -- QNA_일련번호
+		);
+
+ALTER TABLE qna_info
+	MODIFY COLUMN qna_id INT(4) NOT NULL AUTO_INCREMENT;
+
+-- 결제정보
+CREATE TABLE payment_info (
+	pay_id       INT(4)                  NOT NULL, -- 결제정보_일련번호
+	interview_id INT(4)                  NOT NULL, -- 면접_일련번호
+	pay_info     VARCHAR(20)             NOT NULL, -- 결제정보
+	pay_price    VARCHAR(15)             NOT NULL, -- 결제가격
+	ask_date     TIMESTAMP DEFAULT NOW() NOT NULL  -- 면접신청날짜
+);
+
+-- 결제정보
+ALTER TABLE payment_info
+	ADD CONSTRAINT PK_payment_info -- 결제정보 기본키
+		PRIMARY KEY (
+			pay_id -- 결제정보_일련번호
+		);
+
+ALTER TABLE payment_info
+	MODIFY COLUMN pay_id INT(4) NOT NULL AUTO_INCREMENT;
+
+-- 포트폴리오_좋아요이력
+CREATE TABLE portfolio_like_report (
+	portfolio_id INT(4)      NULL, -- 포트폴리오_일련번호
+	userId       VARCHAR(20) NULL  -- 사용자ID
+);
+
+-- 후기게시판_좋아요이력
+CREATE TABLE review_like_report (
+	review_id INT(4)      NULL, -- 후기게시판_일련번호
+	userId    VARCHAR(20) NULL  -- 사용자ID
+);
+
+-- 기업이미지
+CREATE TABLE company_image (
+	company_id VARCHAR(20) NOT NULL, -- 기업_아이디
+	image      VARCHAR(20) NOT NULL  -- 이미지
+);
+
+-- 후기이미지
+CREATE TABLE review_image (
+	review_id INT(4)      NULL,     -- 후기게시판_일련번호
+	image     VARCHAR(20) NOT NULL  -- 이미지
+);
+
+-- 튜터링_이미지
+CREATE TABLE tutoring_image (
+	tutoring_id INT(4)      NULL,     -- 튜터링정보_일련번호
+	image       VARCHAR(20) NOT NULL  -- 이미지
+);
+
+-- 포트폴리오_이미지
+CREATE TABLE portfolio_image (
+	portfolio_id INT(4)      NULL,     -- 포트폴리오_일련번호
+	image        VARCHAR(20) NOT NULL  -- 이미지
+);
+
+-- 관리자
+CREATE TABLE startersManager (
+	id     VARCHAR(20) NOT NULL, -- 관리자id
+	passwd VARCHAR(20) NOT NULL  -- 비밀번호
+);
+
+-- 관리자
+ALTER TABLE startersManager
+	ADD CONSTRAINT PK_startersManager -- 관리자 기본키
+		PRIMARY KEY (
+			id -- 관리자id
+		);
+
+-- 튜터링_시간
+CREATE TABLE tutoring_time (
+	tutoring_id INT(4) NOT NULL, -- 튜터링정보_일련번호
+	start_time  TIME   NOT NULL, -- 시작시간
+	end_time    TIME   NOT NULL  -- 종료시간
+);
+
+-- 회원
+CREATE TABLE TABLE (
+	COL  <데이터 타입 없음> NOT NULL, -- 회원ID
+	COL2 <데이터 타입 없음> NULL,     -- 비밀번호
+	COL3 <데이터 타입 없음> NULL      -- 주소
+);
+
+-- 회원
+ALTER TABLE TABLE
+	ADD CONSTRAINT PK_TABLE -- 회원 기본키
+		PRIMARY KEY (
+			COL -- 회원ID
+		);
+
+-- 게시판
+CREATE TABLE TABLE2 (
+	COL  <데이터 타입 없음> NOT NULL, -- 게시판ID
+	COL2 <데이터 타입 없음> NULL,     -- 제목
+	COL3 <데이터 타입 없음> NULL      -- 컨텐츠
+);
+
+-- 게시판
+ALTER TABLE TABLE2
+	ADD CONSTRAINT PK_TABLE2 -- 게시판 기본키
+		PRIMARY KEY (
+			COL -- 게시판ID
+		);
+
+-- 상품
+CREATE TABLE TABLE3 (
+	COL  <데이터 타입 없음> NOT NULL, -- 상품ID
+	COL2 <데이터 타입 없음> NULL,     -- 상품이름
+	COL3 <데이터 타입 없음> NULL      -- 상품가격
+);
+
+-- 상품
+ALTER TABLE TABLE3
+	ADD CONSTRAINT PK_TABLE3 -- 상품 기본키
+		PRIMARY KEY (
+			COL -- 상품ID
+		);
+
+-- 회원_이미지
+CREATE TABLE TABLE4 (
+	COL2 <데이터 타입 없음> NOT NULL, -- 회원ID
+	COL  <데이터 타입 없음> NULL      -- 이미지
+);
+
+-- 회원_이미지
+ALTER TABLE TABLE4
+	ADD CONSTRAINT PK_TABLE4 -- 회원_이미지 기본키
+		PRIMARY KEY (
+			COL2 -- 회원ID
+		);
+
+-- 게시판_이미지
+CREATE TABLE TABLE5 (
+	COL2 <데이터 타입 없음> NOT NULL, -- 게시판ID
+	COL  <데이터 타입 없음> NULL      -- 이미지
+);
+
+-- 게시판_이미지
+ALTER TABLE TABLE5
+	ADD CONSTRAINT PK_TABLE5 -- 게시판_이미지 기본키
+		PRIMARY KEY (
+			COL2 -- 게시판ID
+		);
+
+-- 이미지
+CREATE TABLE TABLE6 (
+	COL  <데이터 타입 없음> NOT NULL, -- 이미지_번호
+	COL2 <데이터 타입 없음> NULL      -- 이미지
+);
+
+-- 이미지
+ALTER TABLE TABLE6
+	ADD CONSTRAINT PK_TABLE6 -- 이미지 기본키
+		PRIMARY KEY (
+			COL -- 이미지_번호
+		);
+
+-- 좋아요이력2
+CREATE TABLE like_report2 (
+	id           INT(4)                  NULL, -- 게시판_일련번호
+	member_categ INT(2)                  NULL, -- 사용자구분
+	userId       VARCHAR(20)             NULL, -- 사용자ID
+	update_date  TIMESTAMP DEFAULT NOW() NULL  -- 생성일자
+);
+
+-- 게시판2
+CREATE TABLE board (
+	id      INT(4)                  NOT NULL, -- 게시판_일련번호
+	title   VARCHAR(50)             NOT NULL, -- 제목
+	content TEXT                    NOT NULL, -- 내용
+	count   INT(4)                  NULL     DEFAULT 0, -- 조회수
+	date    TIMESTAMP DEFAULT NOW() NOT NULL  -- 등록일시
+);
+
+-- 게시판2
+ALTER TABLE board
+	ADD CONSTRAINT PK_board -- 게시판2 기본키
+		PRIMARY KEY (
+			id -- 게시판_일련번호
+		);
+
+-- 면접_가능_시간
+CREATE TABLE interview_time (
+	interview_id INT(4) NULL,     -- 면접_일련번호
+	start_time   TIME   NOT NULL, -- 시작시간
+	end_time     TIME   NOT NULL  -- 종료시간
+);
+
+-- 중분류직종카테고리정보
+ALTER TABLE middle_category
+	ADD CONSTRAINT FK_main_category_TO_middle_category -- 대분류직종카테고리정보 -> 중분류직종카테고리정보
+		FOREIGN KEY (
+			main_categ_id -- 대분류직종카테고리_일련번호
+		)
+		REFERENCES main_category ( -- 대분류직종카테고리정보
+			main_categ_id -- 대분류직종카테고리_일련번호
+		);
+
+-- 직종선택
+ALTER TABLE job_select
+	ADD CONSTRAINT FK_member_info_TO_job_select -- 튜터튜티_회원정보 -> 직종선택
+		FOREIGN KEY (
+			member_id -- 아이디
+		)
+		REFERENCES member_info ( -- 튜터튜티_회원정보
+			member_id -- 아이디
+		);
+
+-- 직종선택
+ALTER TABLE job_select
+	ADD CONSTRAINT FK_middle_category_TO_job_select -- 중분류직종카테고리정보 -> 직종선택
+		FOREIGN KEY (
+			middle_categ_id -- 중분류_일련번호
+		)
+		REFERENCES middle_category ( -- 중분류직종카테고리정보
+			middle_categ_id -- 중분류_일련번호
+		);
+
+-- 튜터추가정보
+ALTER TABLE tutor_info
+	ADD CONSTRAINT FK_member_info_TO_tutor_info -- 튜터튜티_회원정보 -> 튜터추가정보
+		FOREIGN KEY (
+			member_id -- 아이디
+		)
+		REFERENCES member_info ( -- 튜터튜티_회원정보
+			member_id -- 아이디
+		);
+
+-- 튜터링정보
+ALTER TABLE tutoring_info
+	ADD CONSTRAINT FK_member_info_TO_tutoring_info -- 튜터튜티_회원정보 -> 튜터링정보
+		FOREIGN KEY (
+			tutor_id -- 튜터_아이디
+		)
+		REFERENCES member_info ( -- 튜터튜티_회원정보
+			member_id -- 아이디
+		);
+
+-- 튜터링신청정보
+ALTER TABLE tutoring_apply_info
+	ADD CONSTRAINT FK_tutoring_info_TO_tutoring_apply_info -- 튜터링정보 -> 튜터링신청정보
+		FOREIGN KEY (
+			tutoring_id -- 튜터링정보_일련번호
+		)
+		REFERENCES tutoring_info ( -- 튜터링정보
+			tutoring_id -- 튜터링정보_일련번호
+		);
+
+-- 튜터링신청정보
+ALTER TABLE tutoring_apply_info
+	ADD CONSTRAINT FK_member_info_TO_tutoring_apply_info -- 튜터튜티_회원정보 -> 튜터링신청정보
+		FOREIGN KEY (
+			tutee_id -- 튜티_아이디
+		)
+		REFERENCES member_info ( -- 튜터튜티_회원정보
+			member_id -- 아이디
+		);
+
+-- 찜하기
+ALTER TABLE tutoringlike
+	ADD CONSTRAINT FK_member_info_TO_tutoringlike -- 튜터튜티_회원정보 -> 찜하기
+		FOREIGN KEY (
+			tutee_id -- 튜티_아이디
+		)
+		REFERENCES member_info ( -- 튜터튜티_회원정보
+			member_id -- 아이디
+		);
+
+-- 찜하기
+ALTER TABLE tutoringlike
+	ADD CONSTRAINT FK_tutoring_info_TO_tutoringlike -- 튜터링정보 -> 찜하기
+		FOREIGN KEY (
+			tutoring_id -- 튜터링정보_일련번호
+		)
+		REFERENCES tutoring_info ( -- 튜터링정보
+			tutoring_id -- 튜터링정보_일련번호
+		);
+
+-- 후기게시판
+ALTER TABLE review
+	ADD CONSTRAINT FK_tutoring_apply_info_TO_review -- 튜터링신청정보 -> 후기게시판
+		FOREIGN KEY (
+			tutoring_apply_id -- 튜터링신청정보_일련번호
+		)
+		REFERENCES tutoring_apply_info ( -- 튜터링신청정보
+			tutoring_apply_id -- 튜터링신청정보_일련번호
+		);
+
+-- 포트폴리오
+ALTER TABLE portfolio
+	ADD CONSTRAINT FK_member_info_TO_portfolio -- 튜터튜티_회원정보 -> 포트폴리오
+		FOREIGN KEY (
+			member_id -- 튜티_아이디
+		)
+		REFERENCES member_info ( -- 튜터튜티_회원정보
+			member_id -- 아이디
+		);
+
+-- 포트폴리오_직종선택
+ALTER TABLE portfolio_job_selects
+	ADD CONSTRAINT FK_middle_category_TO_portfolio_job_selects -- 중분류직종카테고리정보 -> 포트폴리오_직종선택
+		FOREIGN KEY (
+			middle_categ_id -- 중분류_일련번호
+		)
+		REFERENCES middle_category ( -- 중분류직종카테고리정보
+			middle_categ_id -- 중분류_일련번호
+		);
+
+-- 포트폴리오_직종선택
+ALTER TABLE portfolio_job_selects
+	ADD CONSTRAINT FK_portfolio_TO_portfolio_job_selects -- 포트폴리오 -> 포트폴리오_직종선택
+		FOREIGN KEY (
+			portfolio_id -- 포트폴리오_일련번호
+		)
+		REFERENCES portfolio ( -- 포트폴리오
+			portfolio_id -- 포트폴리오_일련번호
+		);
+
+-- 면접_직종선택
+ALTER TABLE interview_job_selects
+	ADD CONSTRAINT FK_middle_category_TO_interview_job_selects -- 중분류직종카테고리정보 -> 면접_직종선택
+		FOREIGN KEY (
+			middle_categ_id -- 중분류_일련번호
+		)
+		REFERENCES middle_category ( -- 중분류직종카테고리정보
+			middle_categ_id -- 중분류_일련번호
+		);
+
+-- 면접_직종선택
+ALTER TABLE interview_job_selects
+	ADD CONSTRAINT FK_interview_TO_interview_job_selects -- 면접신청 -> 면접_직종선택
+		FOREIGN KEY (
+			interview_id -- 면접_일련번호
+		)
+		REFERENCES interview ( -- 면접신청
+			interview_id -- 면접_일련번호
+		);
+
+-- 찜하기
+ALTER TABLE company_like
+	ADD CONSTRAINT FK_company_info_TO_company_like -- 기업_회원정보 -> 찜하기
+		FOREIGN KEY (
+			company_id -- 기업_아이디
+		)
+		REFERENCES company_info ( -- 기업_회원정보
+			company_id -- 아이디
+		);
+
+-- 찜하기
+ALTER TABLE company_like
+	ADD CONSTRAINT FK_portfolio_TO_company_like -- 포트폴리오 -> 찜하기
+		FOREIGN KEY (
+			portfolio_id -- 포트폴리오_일련번호
+		)
+		REFERENCES portfolio ( -- 포트폴리오
+			portfolio_id -- 포트폴리오_일련번호
+		);
+
+-- 면접신청
+ALTER TABLE interview
+	ADD CONSTRAINT FK_company_info_TO_interview -- 기업_회원정보 -> 면접신청
+		FOREIGN KEY (
+			company_id -- 기업_아이디
+		)
+		REFERENCES company_info ( -- 기업_회원정보
+			company_id -- 아이디
+		);
+
+-- 면접신청
+ALTER TABLE interview
+	ADD CONSTRAINT FK_member_info_TO_interview -- 튜터튜티_회원정보 -> 면접신청
+		FOREIGN KEY (
+			member_id -- 아이디
+		)
+		REFERENCES member_info ( -- 튜터튜티_회원정보
+			member_id -- 아이디
+		);
+
+-- 튜터링 일지
+ALTER TABLE tutoring_record
+	ADD CONSTRAINT FK_tutoring_apply_info_TO_tutoring_record -- 튜터링신청정보 -> 튜터링 일지
+		FOREIGN KEY (
+			tutoring_apply_id -- 튜터링신청정보_일련번호
+		)
+		REFERENCES tutoring_apply_info ( -- 튜터링신청정보
+			tutoring_apply_id -- 튜터링신청정보_일련번호
+		);
+
+-- 결제정보
+ALTER TABLE payment_info
+	ADD CONSTRAINT FK_interview_TO_payment_info -- 면접신청 -> 결제정보
+		FOREIGN KEY (
+			interview_id -- 면접_일련번호
+		)
+		REFERENCES interview ( -- 면접신청
+			interview_id -- 면접_일련번호
+		);
+
+-- 포트폴리오_좋아요이력
+ALTER TABLE portfolio_like_report
+	ADD CONSTRAINT FK_portfolio_TO_portfolio_like_report -- 포트폴리오 -> 포트폴리오_좋아요이력
+		FOREIGN KEY (
+			portfolio_id -- 포트폴리오_일련번호
+		)
+		REFERENCES portfolio ( -- 포트폴리오
+			portfolio_id -- 포트폴리오_일련번호
+		);
+
+-- 후기게시판_좋아요이력
+ALTER TABLE review_like_report
+	ADD CONSTRAINT FK_review_TO_review_like_report -- 후기게시판 -> 후기게시판_좋아요이력
+		FOREIGN KEY (
+			review_id -- 후기게시판_일련번호
+		)
+		REFERENCES review ( -- 후기게시판
+			review_id -- 후기게시판_일련번호
+		);
+
+-- 기업이미지
+ALTER TABLE company_image
+	ADD CONSTRAINT FK_company_info_TO_company_image -- 기업_회원정보 -> 기업이미지
+		FOREIGN KEY (
+			company_id -- 기업_아이디
+		)
+		REFERENCES company_info ( -- 기업_회원정보
+			company_id -- 아이디
+		);
+
+-- 후기이미지
+ALTER TABLE review_image
+	ADD CONSTRAINT FK_review_TO_review_image -- 후기게시판 -> 후기이미지
+		FOREIGN KEY (
+			review_id -- 후기게시판_일련번호
+		)
+		REFERENCES review ( -- 후기게시판
+			review_id -- 후기게시판_일련번호
+		);
+
+-- 튜터링_이미지
+ALTER TABLE tutoring_image
+	ADD CONSTRAINT FK_tutoring_info_TO_tutoring_image -- 튜터링정보 -> 튜터링_이미지
+		FOREIGN KEY (
+			tutoring_id -- 튜터링정보_일련번호
+		)
+		REFERENCES tutoring_info ( -- 튜터링정보
+			tutoring_id -- 튜터링정보_일련번호
+		);
+
+-- 포트폴리오_이미지
+ALTER TABLE portfolio_image
+	ADD CONSTRAINT FK_portfolio_TO_portfolio_image -- 포트폴리오 -> 포트폴리오_이미지
+		FOREIGN KEY (
+			portfolio_id -- 포트폴리오_일련번호
+		)
+		REFERENCES portfolio ( -- 포트폴리오
+			portfolio_id -- 포트폴리오_일련번호
+		);
+
+-- 튜터링_시간
+ALTER TABLE tutoring_time
+	ADD CONSTRAINT FK_tutoring_info_TO_tutoring_time -- 튜터링정보 -> 튜터링_시간
+		FOREIGN KEY (
+			tutoring_id -- 튜터링정보_일련번호
+		)
+		REFERENCES tutoring_info ( -- 튜터링정보
+			tutoring_id -- 튜터링정보_일련번호
+		);
+
+-- 회원_이미지
+ALTER TABLE TABLE4
+	ADD CONSTRAINT FK_TABLE_TO_TABLE4 -- 회원 -> 회원_이미지
+		FOREIGN KEY (
+			COL2 -- 회원ID
+		)
+		REFERENCES TABLE ( -- 회원
+			COL -- 회원ID
+		);
+
+-- 게시판_이미지
+ALTER TABLE TABLE5
+	ADD CONSTRAINT FK_TABLE2_TO_TABLE5 -- 게시판 -> 게시판_이미지
+		FOREIGN KEY (
+			COL2 -- 게시판ID
+		)
+		REFERENCES TABLE2 ( -- 게시판
+			COL -- 게시판ID
+		);
+
+-- 면접_가능_시간
+ALTER TABLE interview_time
+	ADD CONSTRAINT FK_interview_TO_interview_time -- 면접신청 -> 면접_가능_시간
+		FOREIGN KEY (
+			interview_id -- 면접_일련번호
+		)
+		REFERENCES interview ( -- 면접신청
+			interview_id -- 면접_일련번호
+		);

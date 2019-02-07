@@ -1,0 +1,58 @@
+ul.nav.nav-tabs.nav-justified {
+    width: 100%;
+    position: sticky;
+    top: 57px;
+    z-index: 99;
+	background-color: #fff;
+}
+
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link.active:hover{
+	font-weight: 900;
+    color: #000000;
+    background-color: #fff;
+	border: 0;
+    border-bottom: 5px solid #feca01;
+}
+
+.nav-tabs .nav-link {
+    color: #5d5d5d;
+    background-color: #fff;
+    height: 70;
+    line-height: 50px;
+	border-radius: 0;
+	border: 0;
+	transition: .25s;
+    border-bottom: 1px solid rgba(198, 198, 198, 0.4);
+	overflow: hidden;
+}
+
+.nav-tabs .nav-link:hover {
+    color: #000000;
+    border-bottom: 5px solid rgba(198, 198, 198, 1);
+}
+
+.container {
+	width: 100%;
+	margin: 5vh auto;
+}
+
+@media screen and (max-width: 415px) {
+	* {
+		font-size: 10px;
+	}
+	.container {
+	    width: 100%;
+	    padding: 0;
+	    margin: 5vh auto;
+	}
+}
+
+.years {
+	width: 644px;
+}
+
+table.table {
+    max-width: 770;
+}

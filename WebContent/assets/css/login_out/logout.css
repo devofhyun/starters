@@ -1,0 +1,45 @@
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+/*password부분 시작*/
+.logout_container{
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 100px;
+    border: 0;
+    /* border: 1px solid rgba(90, 98, 104, .4); */
+} 
+.row{
+    padding-top: 1em;
+    width: 80%;
+    margin-left: 1px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.h2m {
+	text-align: center;
+}
+
+.inputbb {
+    margin: 0 auto;
+}
+
+.btn-group {
+	width: 100%;
+}
+
+/* .btn.btn-outline-secondary:hover {
+	background-color: #49AFD4;
+	border-color: #49AFD4;
+} */
+
+.btn.btn-outline-secondary:hover {
+	background-color: #feca01;
+	border-color: #feca01;
+}

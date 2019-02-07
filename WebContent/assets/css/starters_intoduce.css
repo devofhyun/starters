@@ -1,0 +1,70 @@
+    body {
+    margin: 0;
+    }
+
+    #top ul, #navi ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f9a277;
+    overflow: hidden;
+    }
+
+    #top a {
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    }
+
+    #navi ul {
+    background-color: #343a40;
+    }
+
+    #top li {
+    list-style-type: none;
+    float: right;
+    }
+
+    #navi li {
+    /* margin: 10px; */
+    float: right;
+    }
+
+    #navi li a {
+    color: white;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+    #navi li a:hover {
+    background-color: #eee;
+    }
+
+    #content h2 {
+    text-align: center
+    }
+
+
+/*-----------------*/
+/*스타터스 소개페이지 글자 크기*/
+.starters_introduce_h{
+  font-weight: bold;
+}
+
+.starters_image{
+  display: block;
+  margin: 0 auto;
+}
+
+.tutoring_service_h{
+  font-weight: bold;
+text-align: center;
+}
+
+#starters_introduce_p{
+  margin:0 auto;
+  display: block;
+  width:60%;
+}

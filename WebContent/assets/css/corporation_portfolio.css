@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+}
+
+#top ul, #navi ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #f9a277;
+  overflow: hidden;
+}
+
+#top a {
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+}
+
+#navi ul {
+  background-color: #343a40;
+}
+
+#top li {
+  list-style-type: none;
+  float: right;
+}
+
+#navi li {
+  /* margin: 10px; */
+  float: right;
+}
+
+#navi li a {
+  color: white;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#navi li a:hover {
+  background-color: #eee;
+}
+
+#content h2 {
+  text-align: center
+}
+
+  /* 포트폴리오 */
+
+  /* 검색 */
+.search {
+  /* width: 100%; */
+  border: 2px solid black;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+button.btn.btn1.dropdown-toggle {
+  background-color: #fff;
+  border: 1px solid black;
+}
+
+button.btn.btn1.dropdown-toggle:hover, button.btn.btn3.dropdown-toggle:hover {
+  color: black;
+}
+
+.searchinput {
+  width: 100%;
+  margin-top: 3px;
+}
+
+.searchbtn > button.btn.btn2 {
+  float: right;
+}
+
+  /* 검색, 등록하기 버튼 */
+button.btn.btn2 {
+  background-color: #5E5E5E;
+  color: white;
+}
+
+  /* 등록하기 */
+.enroll {
+  margin-bottom: 20px;
+}
+
+.dropenroll > button.btn.btn3 {
+  float: right;
+  background-color: #fff;
+  border: 1px solid black;
+}
+
+  /* portfolio */
+.card {
+  /* border: none; */
+  border: 1px solid black;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+/* .card:hover {
+  border: 2px solid black;
+} */
+
+.portfolio {
+  /* border: 1px solid black; */
+}
+
+button.btn:hover {
+  background-color: #9E9E9E;
+  color: white;
+}
+
+  /* pagination */
+li.page-item {
+  margin: 3px;
+  border: none;
+}
+
+a.page-link {
+  background-color: #DDD;
+  color: black;
+}
+
+a.page-link:hover {
+  background-color: #9E9E9E;
+  color: white;
+}
+
+  /* /포트폴리오 */

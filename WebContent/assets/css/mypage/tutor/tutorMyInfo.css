@@ -1,0 +1,47 @@
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.container {
+	margin: 5vh auto 10vh;
+}
+
+span.job:after {
+	content: " / ";
+}
+span.job:before,
+span.job:last-child:after {
+	content: "  ";
+}
+span {
+    display: inline-block;
+}
+
+.jobtable {
+	display: inline-table;
+	padding: 0;
+}
+
+.profile {
+	word-wrap: break-word;
+	width: 100%;
+	padding: 20px;
+	border: 1px solid rgba(90, 98, 104, .4);
+	border-radius: 10px;
+    min-height: 200px;
+}
+
+.btnzip {
+    padding-right: 15px;
+	margin: 3vh auto;
+	text-align: right;
+}
+
+
+.info-container {
+	border-radius: 10px;
+}
+
+label {
+	font-weight: 600;
+}

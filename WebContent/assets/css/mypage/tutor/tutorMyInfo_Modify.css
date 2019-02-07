@@ -1,0 +1,78 @@
+/* 폰트 */
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+h3 {
+	font-weight: bolder;
+	margin: 10vh auto;
+	margin-bottom: 5vh;
+	padding: 0 15px;
+}
+.container {
+	width: 80%;
+	margin: 5vh auto 10vh;
+}
+
+.row {
+    margin: 10px 0;
+}
+
+button.btn.btn-sm.btn-secondary.idCheck,
+#confirm2,
+#btnSubmit:hover {
+    border-top-right-radius: .2rem;
+    border-bottom-right-radius: .2rem;
+	background-color: #fff;
+	border-color: #feca01;
+	color: #000;
+}
+
+button.btn.btn-sm.btn-secondary.idCheck:hover,
+#confirm2:hover,
+#btnSubmit {
+	background-color: #feca01;
+	color: #fff;
+	border-color: #feca01;
+}
+
+input:focus::placeholder {
+  opacity: .2;
+}
+
+
+.maleGender, 
+.femaleGender {
+	padding: 0 10px 0 0;
+	}
+	
+.row.yesnobtn {
+    padding: 0 15px;
+    text-align: right;
+}
+
+.yesnobtn {
+	margin: 0 0 0 10px;
+}
+
+.btn-outline-secondary:hover {
+	background-color: #fff;
+	color: #000;
+}
+
+textarea#id_profile {
+    min-height: 30vh;
+}
+input#passwd_check {
+    min-width: 150;
+}
+
+@media screen and (min-width: 535px){
+	label.col-3 {
+	    max-width: 250px;
+	    min-width: 150px;
+	}
+	.input-group.col-9.mb-3 {
+	    max-width: 350px;
+	}
+}

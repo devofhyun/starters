@@ -1,0 +1,71 @@
+
+
+  /* 찜하기 */
+
+  /* tab */
+  .nav-pills>li {
+    background-color: #E0E0E0;
+    margin: 1px;
+  }
+  .nav-link {
+    color: black;
+  }
+  .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: #9E9E9E;
+  }
+
+  /* icon */
+  i.fas.fa-user-circle {
+    float: right;
+  }
+  .user>h6 {
+    float: right;
+    margin-right: 3px;
+  }
+
+
+#inquiry {
+  text-align: center;
+}
+
+#hrtop {
+  background-color: black;
+  margin-top: 0;
+}
+
+#hrbottom {
+  background-color: black;
+}
+
+#date {
+  padding-top: 20px;
+}
+
+#findbtn{
+  float: right;
+}
+
+table {
+  padding-top: 10px;
+}
+
+
+li.page-item {
+  margin: 3px;
+  border: none;
+}
+a.page-link {
+  background-color: #DDD;
+    color: black;
+}
+a.page-link:hover {
+  background-color: #9E9E9E;
+  color: white;
+}
+
+.row button{
+  margin-right: 1.5rem;
+}
+.row button:nth-child(6){
+  margin-left: 28rem;
+}

@@ -1,0 +1,54 @@
+/*input:focus {
+  outline: none;
+}
+/*포트폴리오*/
+.row{
+  display: flex;
+  width: 100%;
+}
+
+.row1{
+  margin: 80px 0 0 50px;
+  width: 90%;
+  display: flex;
+  border-bottom: 2px solid gray;
+  padding-bottom: 30px;
+}
+.upload img {
+   border:2px dotted gray;
+   max-width:500px; 
+   padding:2px;
+}
+.con{
+  margin-top: 50px;
+}
+h6{
+  float: left;
+  font-weight: bold;
+  text-align: center;
+  margin-right: 10px;
+}
+.content1{
+  position: relative;
+  margin-top: 20px;
+  text-align:center;
+}
+.content1 .plan{
+  display: inline-block;
+  width: 90%;
+  height: 1000px;
+}
+.list{
+  width:150px;
+  float: right;
+  background-color: #e7e7e7; color: black;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+div .plan{
+  border: 2px solid pink;
+}
+
+.row1 .row{
+  margin:0px 0px 0px 20px;
+}

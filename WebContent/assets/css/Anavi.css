@@ -1,0 +1,523 @@
+/* 내비 css */
+
+html {
+    overflow-x: hidden;
+    width: 100%;
+}
+article {
+	background-color: #fff;
+	padding: 40px;
+	margin-left: -200px;
+}
+div#wrap {
+    background-color: #333;
+}
+/* 내비 css */
+
+/* 폰트 */
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+	margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+div#top {
+    position: sticky;
+    top: 0;
+    height: 30px;
+    z-index: 999;
+}
+
+.navbar-brand img {
+	height: 35px;
+	transition: .5s;
+}
+
+#top ul, #navi ul {
+    position: sticky;
+    height: 30;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    overflow: hidden;
+    top: 0;
+    z-index: 1000;
+}
+
+#top a{
+text-decoration: none;
+color: #000;
+padding-left: 5px;
+padding-right: 5px;
+font-size: 14px;
+}
+
+#top p {
+	display: inline;
+	font-size: 14px;
+	color: #000;
+	line-height: 2.5;
+}
+
+#logout:hover, #login:hover, #register:hover {
+	text-decoration : underline;
+}
+
+#top li {
+list-style-type: none;
+float: right;
+padding: 0 0 3px 0;
+	line-height: 0;
+}
+
+#top p.nim{
+	display: inline;
+	color: #000;
+}
+
+/* 네비바 컬러 */
+#bgbg {
+    background-color: #333!important;
+    position: sticky!important;
+	height: 57px;
+}
+
+/* 네비바 링크 a 컬러 */
+#bgbg .navbar-nav .nav-link {
+	color: #fff;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+button.navbar-toggler.collapsed,
+button.navbar-toggler,
+button.navbar-toggler:focus {
+    border: 0;
+    outline: 0;
+}
+
+.dropdown-menu {
+	right: -10;
+    left: auto;
+    min-width: 130;
+    top: 48;
+    border-radius: 0;
+    border: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+a.dropdown-item {
+    text-align: center;
+    padding: 10;
+    font-size: 15px;
+	color: #fff;
+}
+
+.navbar-collapse.collapse.show a.dropdown-item:hover{
+	color: #000;
+	background-color: rgba(90, 98, 104, 0);
+	text-decoration: underline;
+}
+
+
+.nav-item.show .dropdown-toggle::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: 0;
+    border-right: .3em solid transparent;
+    border-bottom: .3em solid;
+    border-left: .3em solid transparent;
+}
+
+
+ul.navbar-nav.mr-auto.justify-content-end {
+	width:100%
+}
+
+@media screen and (min-width: 992px) {
+	a.dropdown-item:hover{
+		color: #000;
+		background-color: rgba(90, 98, 104, 0);
+		text-decoration: underline;
+	}
+}
+
+
+@media screen and (max-width: 991px) {
+	a.nav-link:hover {
+	    text-decoration: underline;
+	}
+	
+	/* collapse가 show일때 */
+	div#navbarsExample04 {
+	    top: -1000;
+	    position: absolute;
+	    transition: .5s;
+	    transform-style: preserve-3d;
+	}
+	div#navbarsExample04.show {
+        display: block;
+	    color: #000;
+	    position: absolute;
+	    top: 56;
+	    padding: 10 30;
+	    right: -20;
+	    width: 100%;
+	    text-align: right;
+	    transition: 1s;
+	    transform-style: preserve-3d;
+	    background-color: #333;
+	    opacity: .8;
+/*     background-image: linear-gradient(180deg,
+    							rgba(90, 98, 104, 1) 0%,
+    							rgba(90, 98, 104, .7) 50% , 
+    							rgba(90, 98, 104, .1) 80%, 
+    							rgba(90, 98, 104, 0) 100%); */
+	}
+	
+	.navbar-collapse.collapse.show .dropdown-menu {
+	    border: 0;
+	    background-color: rgba(0,0,0,0);
+	}
+	
+	a.dropdown-item,
+	a.dropdown-item:hover{
+		color: #fff;
+		background-color: rgba(90, 98, 104, 0) 0%;
+	}
+	
+	.navbar-collapse.collapse.show a.dropdown-item:hover{
+		color: #fff;
+		background-color: rgba(90, 98, 104, 0);
+		text-decoration: none;
+	}
+	a.dropdown-item:hover:after {
+	    content: "";
+	    position: absolute;
+	    width: 3px;
+	    height: 25px;
+	    background-color: #fff;
+	    right: -10;
+	}
+	.navbar-brand{
+	    padding: 0px;
+	}
+
+	
+}
+
+@media screen and (min-width: 641px) and (max-width:991px){
+	#bgbg .navbar-nav .nav-link
+	 {
+		color:#fff;
+		font-size: 2vh;
+	}	
+	a.dropdown-item {
+    	text-align: right;
+	    font-size: 1.7vh;
+	}
+}
+
+@media screen and (max-width: 640px){
+	.navbar-brand img {
+		 height: 25px;
+	}
+	
+	#bgbg .navbar-nav .nav-link{
+	    color: #fff;
+	    font-size: 15px;
+	}	
+	
+	a.dropdown-item {
+    	text-align: right;
+	    font-size: 12px;
+	}
+	div#navbarsExample04.show {
+		top: 50;
+	}
+	
+	a.dropdown-item:hover:after {
+	    content: "";
+	    position: absolute;
+	    width: 3px;
+	    height: 18px;
+	    background-color: #fff;
+	    right: -10;
+	}
+	
+	h2 strong {
+	    font-size: 2rem;
+	}
+}
+
+
+/* 드롭다운 버튼 */
+button.navbar-toggler {
+    position: relative;
+    right: 0;
+    width: 30px;
+    height: 30px;
+}
+
+span.navbar-icon {
+    position: absolute;
+    height: 3px;
+    background-color: #fff;
+    width: 25px;
+    transition: .4s;
+    right: 1px;
+    transform-style: preserve-3d;
+}
+.navbar-toggler span.navbar-icon.top {
+    top: 10px;
+}
+.navbar-toggler span.navbar-icon.bottom {
+    top: 20px;
+}
+
+.navbar-toggler.open span.navbar-icon.top {
+    transform: rotate(45deg);
+    top: 15px;
+}
+.navbar-toggler.open span.navbar-icon.bottom {
+    transform: rotate(-45deg);
+    top: 15px;
+}
+.nav-bar .nav-item{
+	   margin: 0 20px;
+}
+#navbarsExample04{
+	margin-right: 20px;
+}
+
+    /* Simple Reset CSS */
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #58666e;
+      background-color: #f0f3f4;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjus: 100%;  /* iphone font size 변경 방지 */
+    }
+    li { list-style: none; }
+    a { text-decoration: none; }
+    h1, h2, h3, h4, h5, h6, p {
+      margin: 10px 5px;
+    }
+    h1 { font-size: 1.8em; }
+	nav{
+	width:100%
+	}
+    #wrap {
+      width: 100%;
+      /* margin-top = header height */
+      margin-top: 60px;
+    }
+
+    /* Navigation bar */
+    header {
+      /* for sticky header */
+      position: fixed;
+      top: 0;
+
+      width: 100%;
+      /**height: 60px;*/
+      z-index: 2000;
+      background-color: #fff;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
+    }
+    nav {
+      float: right;
+    }
+    .nav-items {
+      margin-right: 20px;
+    }
+    .nav-items > li {
+      display: inline-block; /* 가로정렬 */
+    }
+    .nav-items > li > a {
+      line-height: 60px; /* for Vertical Centering */
+      padding: 0 30px;   /* nav item간 간격 */
+      color: rgba(0,0,0,0.4);
+    }
+    .nav-items > li > a:hover {
+      color: rgba(0,0,0,0.8);
+    }
+
+    /* contents */
+    /* clearfix */
+    #content-wrap:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    aside {
+      /* for fixed side bar */
+      position: fixed;
+      top: 41px;
+      bottom: 0;
+
+      width: 200px;  /* 너비 고정 */
+      padding-top: 50px;
+      background-color: #333;
+    }
+    /* aside navigation */
+    aside > ul {
+      width: 200px;
+      text-align: left;
+    }
+    aside > ul > li > a {
+      display: block;
+      color: #fff;
+      padding: 10px 0 10px 20px;
+    }
+    aside > ul > li > a.active {
+      background-color: #4CAF50;
+    }
+    aside > ul > li > a:hover:not(.active) {
+      background-color: #555;
+    }
+    aside > h1 {
+      padding: 20px 0 20px 20px;
+      color: #fff;
+    }
+    /* Section */
+    section {
+      
+      margin-left: 200px;  /*aside width*/
+    }
+    
+    .nav-toggle {
+      display: none;
+    }
+    .navicon {
+      display: none;
+    }
+    /* 메뉴 스타일 */
+#content-wrap h3 {
+   font-size: 12px;
+   line-height: 34px;
+   padding: 0 10px;
+   cursor: pointer;
+}
+/* 아이콘폰트 스타일 */
+#content-wrap h3 span,
+#content-wrap h3 a {
+   font-size: 16px;
+   color: #fff;
+   margin-right: 10px;
+}
+#content-wrap li {
+   list-style-type: none;
+}
+
+/* 서브메뉴 스타일 */
+#content-wrap ul ul li a {
+   text-decoration: none;
+   font-size: 11px;
+   line-height: 27px;
+   color: #aeacac;
+   display: block;
+   padding: 0 15px;
+   -webkit-transition: all 0.15s;
+   -moz-transition: all 0.15s;
+   -o-transition: all 0.15s;
+   -ms-transition: all 0.15s;
+   transition: all 0.15s;
+}
+
+#content-wrap ul ul li a:hover {
+   border-left: 5px solid #aeacac;
+}
+
+/* active 클래스 외에 것은 보이지 않게 하기 */
+#content-wrap ul ul {
+   display: none;
+}
+
+#content-wrap li.active ul {
+   display: block;
+}
+
+    /* Media Query */
+    /* for tablet: ~ 800px */
+    @media screen and (max-width: 800px) {
+		article {
+		    padding: 40 0;
+		}
+      nav {
+        float: none;
+        margin-right: 0;
+      }
+      #wrap {
+        /* margin-top = header height */
+        margin-top: 0px;
+      }
+
+    }
+    /* for smartphone: ~ 480px */
+    @media screen and (max-width: 480px) {
+      header {
+      
+      }
+      .nav-items {
+        display: none;
+      }
+      .navicon {
+        display: block;
+      }
+      #wrap {
+        /* margin-top = header height */
+        margin-top: 0px;
+      }
+      aside {
+        top: 60px;
+      }
+      /* View navigation item */
+      .nav-toggle:checked ~ .nav-items {
+        display: block;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
+      }
+      .nav-items > li  {
+        display: block;
+      }
+      .nav-items > li > a {
+        line-height: 50px;
+      }
+    }    
+h3 .nav-link {
+    display: block;
+    padding: 0;
+}
+
+div#content-wrap {
+	left: -200px;
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    width: 230px;
+    padding-top: 25px;
+    background-color: rgba(51, 51, 51, 0);
+    text-align: right;
+}
+
+i.fas {
+	color: #333;
+    padding: 10px 5px;
+    font-size: 20;
+}

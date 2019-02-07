@@ -1,0 +1,169 @@
+/* 폰트 */
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+.container {
+	min-height: 80vh;
+	margin-bottom: 100px;
+}
+.modal-body {
+	margin: 0 auto;
+}
+.complist {
+  margin-top: 30px;
+}
+
+#compinfo th , #compinfo td{
+  text-align: left;
+}
+.modal-body .table td:first-child, 
+.modal-body .table th:first-child{
+	width: 100px;
+}
+
+.table td, .table th {
+    text-align: center;
+    word-break: break-all;
+}
+.complist h2 {
+  margin-bottom: 10px;
+}
+
+.mainimg, #compinfo {
+    width: 100%;
+}
+
+.carousel-item {
+    height: 350px;
+    overflow: hidden;
+}
+
+.mainimg img {
+	padding: 5vh 0;
+    height: 100%;
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+div#compinfo table {
+    table-layout: fixed;
+}
+table th {
+  background-color: #eee;
+}
+
+.compSearchBox {
+	margin: 30px auto;
+	border-radius: 20px;
+	padding: 20 0;
+}
+
+.compSearchBox button {
+  width: 100px;
+}
+
+
+label.col-2.control-label {
+    max-width: 100%;
+}
+.form-group {
+  width: 90%;
+  padding: 10px 0;
+}
+
+.carousel-indicators li,
+.carousel-indicators .active {
+    background-color: #000;
+}
+
+div#demo {
+    width: 100%;
+    height: 400px;
+}
+
+.paging {
+	text-align: center;
+	margin: 5vh auto;
+}
+input:focus::placeholder {
+  opacity: 0;
+}
+.nonn:hover{
+	color: #fff!important;
+    background-color: #5a6268!important;
+    border-color: #545b62!important;
+}
+.nonn {
+    color: #fff!important;
+    background-color: #6c757d!important;
+    border-color: #6c757d!important;
+}
+.w.active,
+.w1.active{
+	background-color: #feca01!important;
+	border-color: #feca01!important;
+	color: #fff!important;
+	
+}
+.w,
+.w1,
+.btn-secondary:hover{
+	background-color: #fff;
+	border-color: #feca01;
+	color: #000;
+}
+
+.w:hover,
+.w1:hover,
+.btn-secondary  {
+	background-color: #feca01;
+	border-color: #feca01;
+	color: #fff;
+}
+@media screen and (max-width: 991px) {
+	.companyList th:nth-child(3), 
+	.companyList td:nth-child(3) {
+	    display: none;
+	}
+}
+
+@media screen and (max-width: 415px) {
+	.companyList th:nth-child(2), 
+	.companyList td:nth-child(2), 
+	.companyList th:nth-child(3), 
+	.companyList td:nth-child(3) {
+	    display: none;
+	}
+	
+	#compinfo * {
+		display: block;
+	}
+	
+	.modal-body .table td,
+	.modal-body .table th {
+		width: 100%!important
+	}
+	
+	.modal-body {
+	    margin: 0;
+	}
+	
+	.row .a {
+		padding : 0;
+	}
+	
+	.row .a:first-child{
+		display:none;
+	}
+	
+	.compSearchBox {
+	    margin: 30px 0;
+	    border: 0;
+	    padding: 0 20px;
+	}
+	
+}
+

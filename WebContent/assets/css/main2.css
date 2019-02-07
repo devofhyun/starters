@@ -1,0 +1,257 @@
+/* 폰트 */
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+input[type="text"]:focus{
+	outline: none;
+	border : 1px soild rgb(90, 98, 104);
+}
+body {
+  padding: 0;
+  margin: 0;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow-x: hidden;
+  font-family: 'Roboto';
+}
+
+.bbbb .firstB,
+.bbbb .secondB,
+.bbbb .secondB div{
+	min-height: 30vh;
+    transition: 0.4s;
+  transform-style: preserve-3d;
+	
+}
+
+.bbbb .firstA {
+	min-height: 60vh;
+	}
+
+.bbbb .secondB {
+	padding: 0;
+	background-color: #bb97f7;
+}
+
+.parallax {
+  height:40vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+.parallax.p1 {
+  background: url(../image/backGG2.jpg) no-repeat fixed 50% 0;
+  background-size: cover;
+  color: #fff;
+  height:100vh;
+}
+.parallax.p2 {
+    width: 100%;
+  background: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-126549.jpg) no-repeat fixed 50% 0;
+  background-size: cover;
+  color: #fff;
+}
+.parallax.p3 {
+  background: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-95766.jpg) no-repeat fixed 70% 0;
+  background-size: cover;
+  color: #fff;
+}
+.parallax-text {
+  width: 24em;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  border: .5em solid #fff;
+  margin-left: -10%;
+  padding: 2em 0;
+  text-align: center;
+  z-index: 999;
+}
+.parallax > div.blur-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+} 
+hgroup{
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: #fff;
+  border: 5px solid #fff;
+  padding: .5em 3em;
+  background-color: rgba(0,0,0,.2);
+  z-index: 2;
+}
+
+.bbox {  
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	color: #fff;
+	padding: .5em 3em;
+	z-index: 2;
+	color: #000;
+	border: 5px solid #000;
+}
+
+div#section-3:hover hgroup,
+.bbox:hover {
+	border: 5px solid #feca01;
+	border-left: 5px solid rgba(255, 255, 255, 0);
+	border-right: 5px solid rgba(255, 255, 255, 0);
+	background-color: rgba(255, 255, 255, 0);
+	font-weight: 900;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row > .col-3 {
+  width: 30%;
+  box-sizing: border-box;
+  float: left;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.container {
+  width: 85%;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+
+.lportfolio {
+    width: 100%;
+    background-size: cover;
+    /* margin-bottom: 10px; */
+    margin: 0 auto;
+    margin-bottom: 10px;
+    height: 20vh;
+}
+
+.card {
+    border: 0!important;
+    padding-bottom: 20px;
+}
+
+.titlebox{
+    margin: 52vh auto;
+/* 	margin-top: 35vh;  */
+}
+
+.portfolio {
+		height: 50vh;
+	}
+
+div.bgroup {
+    margin: 0 auto;
+    width: 10px;
+    top: 50vh;
+    left: 95vw;
+    height: 0;
+    position: sticky;
+    z-index: 999;
+    text-align: center;
+}
+
+.pagemove {
+	width: 15px;
+    height: 15px;
+    background-color: rgba(90, 98, 104, .7);
+    margin: 0;
+    margin-bottom: 5px;
+    display: block;
+    border-radius: 10px;
+}
+
+.pagemove:hover {
+    background-color: #feca01;
+    border: none;
+}
+
+.portfolio {
+	height: 100vh;
+	white-space: nowrap;
+	padding-top: 35vh;
+}
+
+h3.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 3%;
+}
+
+a.title {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.bg1 {
+  background: url("../../assets/image/bg-showcase-1.jpg") no-repeat center;
+}
+.bg2 {
+  background: url("../../assets/image/bg-showcase-2.jpg") no-repeat center;
+}
+.bg3 {
+  background: url("../../assets/image/bg-showcase-2.jpg") no-repeat center;
+}
+.bg1, .bg2, .bg3 {
+	background-size: contain;
+	background-color: #5a6268;
+	
+} 
+
+.row.list1, p.content1 {
+  height: 300px;
+  width: 100%;    
+  overflow: hidden;
+}
+
+p.content1 {
+	padding: 10px;
+	font-size: 12px;
+	
+	
+}
+
+.bigLogo {
+	background: url("../../assets/image/로고2.png") no-repeat center;
+	background-size: contain;
+	z-index: 9999;
+}
+
+
+@media screen and (max-width: 768px) {
+	
+	.portfolio {
+		height: 120vh;
+		padding-top: 10vh;
+	}
+	
+	.lportfolio {
+		width: 80%;
+		height: auto:
+      }
+      
+}
+
+@media screen and (max-width: 450px) {
+	
+}
+
+/* Blank lines for ease and view */
+/* */

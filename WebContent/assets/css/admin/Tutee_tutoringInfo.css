@@ -1,0 +1,139 @@
+/* 폰트 */
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.container {
+	margin: 5vh auto 0;
+}
+.state {
+	text-align: right;
+}
+
+.state .btn{
+	border: 1px solid #afafaf;
+	background-color: #fff;
+	color: #afafaf;
+}
+
+.state .btn:hover{
+	border: 1px solid #afafaf;
+	background-color: #afafaf;
+	color: #fff;
+}
+
+.paging {
+	text-align: center;
+	margin: 10vh auto;
+}
+
+.tutoringInfoMain,
+.interviewMain {
+    margin: 2vh auto;
+    border-top: 1px solid rgba(90, 98, 104, .4);
+    padding-top: 2vh;
+}
+
+form#delete {
+    margin: 0;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+.container.content {
+	padding: 0;
+	width: 100%;
+    margin: 0;
+	min-height: 50vh;
+}
+
+
+input#from,
+input#to {
+	width: 25%;
+	display: inline-block;
+}
+
+.month input{
+	margin: 0 10px;
+	overflow: hidden;
+}
+
+table{
+	table-layout: fixed;
+	text-align: center;
+}
+
+table.interV  th:nth-child(2),
+table.interV td:nth-child(2),
+table.interV th:nth-child(4),
+table.interV td:nth-child(4){
+	width: 20%;
+    text-overflow:ellipsis; /*overflow: hidden; 속성과 같이 써줘야 말줄임 기능이 적용된다.*/
+    white-space:nowrap; /*<td>보다 내용이 길경우 줄바꿈 되는것을 막아준다.*/
+    overflow: hidden;
+
+}
+
+.modalTitle {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+
+input::placeholder {
+  opacity: .6;
+  font-weight: 300;
+  transform-origin: 0% 100%;
+  transition: all .2s ease-in-out;
+}
+
+input:focus, button:focus {
+	border: 1px solid rgb(90, 98, 104);
+	overflow: hidden;
+}
+
+input:focus::placeholder {
+
+  opacity: 0;
+  transition: all .2s ease ;
+}
+
+
+@media screen and (min-width: 641px) and (max-width:991px) {
+	.tutoringInfoMain {
+		max-width: 100%;
+	}
+}
+
+
+@media screen and (min-width: 576px)  {
+	.container {
+    	max-width: 100%;
+	}
+	
+}
+@media screen and (min-width: 992px)  {
+	.container {
+		max-width: 1140px;
+	}
+}
+
+
+@media screen and (max-width: 376px) {
+	.interV th:nth-child(1),
+	.interV td:nth-child(1),
+	.interV th:nth-child(2),
+	.interV td:nth-child(2),
+	.interV th:nth-child(5),
+	.interV td:nth-child(5) {
+		display: none;
+		
+	}
+	
+	.state {
+		text-align: left;
+		padding-left: 4.5rem;
+	}
+}

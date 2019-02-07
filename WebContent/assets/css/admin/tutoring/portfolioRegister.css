@@ -1,0 +1,149 @@
+/* 폰트 */
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.container {
+	margin: 10vh auto 0;
+	width: 80%;
+}
+
+.container.content,
+.container.yesnobtn{
+    margin-top: 0;
+	margin-bottom: 5vh;
+}
+
+.container.content h4 {
+	text-align: center;	
+}
+
+.plan {
+	display: inline-block;
+	width: 100%;
+	min-height: 50vh;
+	margin: 2vh auto 0;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.col-md-6.PimgD {
+    height: 50vh;
+}
+
+.row {
+	width: 100%;
+    margin-bottom: 2vw;
+}
+
+.row .col-md-6 {
+	margin-bottom: 50px;
+}
+
+.tutoringImg {
+    border: 1px solid rgb(90, 98, 104);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+label#ImgInput {
+	text-align: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: -50vh 0 0 0;
+    padding: 22vh 0;
+
+}
+
+label#upload {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: -50vh;
+    padding: 25vh 0;
+}
+
+img#preview {
+    margin: auto;
+    transform: scale(1.5);
+    height: 100%;
+    display: block;
+}
+input#ImgInput {
+    display: none;
+}
+.con {
+	margin: 3% 0;
+    left: 1rem;
+    right: 1rem;
+}
+
+.container.yesnobtn {
+    margin-bottom: 20vh;
+}
+input[type="text"],
+.MethodClass .inline,
+.form-group,
+.filebox  {
+    display: block;
+    width: 100%;
+}
+input[type="text"] {
+	border: 0;
+	border-bottom: 2px solid rgba(90, 98, 104, .2);
+}
+
+input[type="text"]:focus {
+	outline: none;
+	border-bottom: 2px solid #37B9F5;
+	transition: 0.6s;
+}
+
+.row h6 {
+	font-weight: bold;
+}
+
+.filebox label {
+	cursor: pointer;
+	margin: 0;
+}
+
+.upload-name {
+	border: 0;
+	border-bottom: 1px solid rgba(90, 98, 104, .4);
+    background-color: rgba(255,255,255,0);	
+    margin-left: 10px;
+    text-align: center;
+}
+
+.upload-hidden {
+	display: none;
+}
+
+
+/* 버튼 컬러 */
+#btnSubmit {
+    float: right;
+}
+
+
+.btn-secondary{
+	background-color: #fff;
+	border-color: #feca01;
+	color: #464646;
+}
+
+.btn-secondary:hover {
+	background-color: #feca01;
+	border-color: #feca01;
+	color: #fff;
+	
+}
+
+.btn-secondary:focus {
+	outline: none;
+	border: 1px solid rgba(255,255,255,0);
+}

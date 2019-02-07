@@ -1,0 +1,69 @@
+/* 폰트 */
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+h3 {
+	font-weight: bolder;
+	margin: 10vh auto;
+	margin-bottom: 5vh;
+	padding: 0 15px;
+}
+.container {
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: 10vh
+}
+
+.row {
+    margin: 10px 0;
+}
+
+
+input:focus::placeholder {
+  opacity: .2;
+}
+
+
+.maleGender, 
+.femaleGender {
+	padding: 0 10px 0 0;
+	}
+	
+.row.yesnobtn {
+    padding: 0 15px;
+    float: right;
+}
+
+.yesnobtn {
+	margin: 0 0 0 10px;
+}
+
+button.btn.btn-sm.btn-secondary.idCheck,
+#confirm2,
+#btnSubmit:hover {
+    border-top-right-radius: .2rem;
+    border-bottom-right-radius: .2rem;
+	background-color: #fff;
+	border-color: #feca01;
+	color: #000;
+}
+
+button.btn.btn-sm.btn-secondary.idCheck:hover,
+#confirm2:hover,
+#btnSubmit {
+	background-color: #feca01;
+	color: #fff;
+	border-color: #feca01;
+}
+
+.btn-outline-secondary:hover {
+	background-color: #fff;
+	color: #000;
+}
+
+@media screen and (max-width: 376px) {
+	.container {
+	    width: 100%;
+	}
+}

@@ -1,0 +1,105 @@
+/* 폰트 */
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+
+body {
+	font-size: 1.7vh;
+}
+.container {
+    margin: 0 auto 10vh;
+}
+.notice{
+	width: 100%;
+	min-height: 30vh;
+	border-radius: 5px;
+    padding: 30px;	
+}
+p.notice {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.pn-txt {
+    white-space: nowrap;
+    display: inline-flex;
+    overflow: hidden;
+    width: 60%;
+    text-overflow: ellipsis;
+}
+table {
+	 TABLE-LAYOUT: fixed;
+	 border-collapse:collapse;
+	empty-cell:true
+	 
+}
+table tr:last-child td, table tr:last-child th{
+    border-bottom: 1px solid #dee2e6;
+}
+table td, table th {
+	font-size: 1.7vh;
+}
+
+tr:nth-child(2){
+	border-bottom: 1px solid #dee2e6;
+}
+
+td:nth-child(odd) {
+	width: 10vh;
+	font-weight: bolder;
+}
+
+.title {
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.fa, .fas {
+	font-size: 2vh;
+}
+
+.previous a,
+.previous a:hover,
+.next a,
+.next a:hover {
+	margin: 5px;
+	color: #000;
+}
+
+
+.btnzip button{
+	margin-left: 10px;
+}
+
+
+
+@media screen and (max-width: 767px) {
+	.container{
+		max-width: 100%;
+	}
+	
+	table td, table th{
+		font-size: 13;
+	}
+		
+	.row * {
+	    padding: 0;
+	}
+	.row {
+	    margin: 0 15;
+	}
+	
+} 
+
+@media screen and (max-width: 767px) {
+	.w-75 {
+		right: 15!important;
+	}
+}
+.col-6 a.col-4 {
+    display: inline-block;
+}
+

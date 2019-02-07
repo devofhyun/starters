@@ -1,0 +1,116 @@
+/* 폰트 */
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+.container {
+	margin: 3vh auto;
+}
+
+.list {
+	min-height: 50vh;
+}
+
+.card {
+	cursor: pointer;
+    border: 0;
+}
+
+.paging {
+	text-align: center;
+}
+
+.card-body {
+    padding: 0;
+}
+.card:hover .card-header a {
+	text-shadow: -1px 0 3px #000, 
+						0 1px 3px #000, 
+						1px 0 3px #000, 
+						0 -1px 3px #000;
+	
+}
+.card:hover .card-header {
+	display: block;
+}
+.card-header {
+    text-align: center;
+    position: absolute;
+	display: none;
+    padding: 35% 0;
+    width:100%;
+    z-index: 1;
+    background-color: rgba(0,0,0,0);
+    border-bottom: 0;
+}
+
+
+.card-header a {
+    color: #feca01;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+img.Timg {
+    width: 50%;
+    height: 15%;
+    border-radius: 50%;
+    margin: 50 auto;
+    display: block;
+    transition: 0.4s;
+    transform-style: preserve-3d;
+}
+
+.card:hover img.Timg,
+.card-header:hover img.Timg {
+    width: 100%;
+    height: 30%;
+    border-radius: 0;
+    margin: 0 auto;
+    display: block;
+}
+
+
+.card:hover .card-text a,
+.card:hover .card-text p {
+	color: #000;
+	display: block;
+    transition: 0.4s;
+  transform-style: preserve-3d;
+}
+
+.card-text {
+    text-align: center;
+    width: 300;
+    height: 300;
+    padding: 120 0;
+    position: absolute;
+    /* margin: -30px auto; */
+    transition: 0.4s;
+  transform-style: preserve-3d;
+	text-shadow: -1px 0  3px #fff, 0 1px 3px #fff, 1px 0 3px #fff, 0 -1px 3px #fff;
+}
+
+
+
+
+.card-text a {
+	
+	top: -120;
+    left: -100;
+    position: relative;
+    padding: 100;
+    width: 300;
+    height: 300;
+    color: #000;
+    line-height: 5;
+    font-size: 20px;
+    font-weight: 900;
+    display: none;
+    transition: 0.4s;
+    transform-style: preserve-3d;
+	
+}
+
+.card-text p {
+	display: none;
+}

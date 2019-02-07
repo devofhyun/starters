@@ -1,0 +1,64 @@
+
+.container {
+   width: 80%;
+   margin: 5vh auto 10vh;
+
+}
+
+.Butn {
+   text-align: right;
+}
+
+.Butn button{ 
+}
+
+span.tuteeC {
+	word-break: break-all;
+	min-height: 150px;
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(90, 98, 104, .4);
+}
+
+.btn-secondary {
+    background-color: #fff;
+    border-color: #feca01;
+    color: #464646;
+}
+.btn-secondary:hover {
+    background-color: #feca01;
+    border-color: #feca01;
+    color: #fff;
+}
+
+
+label {
+	font-weight: 900;
+}
+
+
+/* 파일 버튼 */
+
+input[type="text"], .MethodClass .inline, .form-group, .filebox {
+    display: block;
+    width: 100%;
+}
+
+.upload-name {
+    border: 0;
+    border-bottom: 1px solid rgba(90, 98, 104, .4);
+    background-color: rgba(255,255,255,0);
+    margin-left: 10px;
+    text-align: center;
+}
+
+.upload-hidden {
+    display: none;
+}
+
+.filebox label {
+	margin: 0;
+    cursor: pointer;
+}

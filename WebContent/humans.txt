@@ -1,0 +1,86 @@
+      ___           ___                       ___           ___                         ___     
+     /\__\         /\  \                     /\__\         /\  \         _____         /\__\    
+    /:/ _/_       /::\  \       ___         /:/ _/_        \:\  \       /::\  \       /:/ _/_   
+   /:/ /\__\     /:/\:\__\     /\__\       /:/ /\__\        \:\  \     /:/\:\  \     /:/ /\  \  
+  /:/ /:/  /    /:/ /:/  /    /:/__/      /:/ /:/ _/_   _____\:\  \   /:/  \:\__\   /:/ /::\  \ 
+ /:/_/:/  /    /:/_/:/__/___ /::\  \     /:/_/:/ /\__\ /::::::::\__\ /:/__/ \:|__| /:/_/:/\:\__\
+ \:\/:/  /     \:\/:::::/  / \/\:\  \__  \:\/:/ /:/  / \:\~~\~~\/__/ \:\  \ /:/  / \:\/:/ /:/  /
+  \::/__/       \::/~~/~~~~   ~~\:\/\__\  \::/_/:/  /   \:\  \        \:\  /:/  /   \::/ /:/  / 
+   \:\  \        \:\~~\          \::/  /   \:\/:/  /     \:\  \        \:\/:/  /     \/_/:/  /  
+    \:\__\        \:\__\         /:/  /     \::/  /       \:\__\        \::/  /        /:/  /   
+     \/__/         \/__/         \/__/       \/__/         \/__/         \/__/         \/__/    
+
+
+/* TEAM */
+
+FRIENDS TEAM
+--------
+
+Made with love in Brooklyn.
+
+Joshua Tuscan
+@joshuatuscan
+
+David Mikula
+@mikula
+
+
+SPECIAL THANKS
+--------------
+
+Andrew Swanson
+Miki Aso
+Leslie Ruckman
+
+
+TECHNOLOGY
+----------
+
+Craft CMS - Pixel & Tonic
+pixelandtonic.com
+
+Sass - CSS pre-processor
+sass-lang.com
+
+Gulp - Task automation
+gulpjs.com
+
+BitBucket - Code collaboration & hosting
+bitbucket.com
+
+JavaScript libraries include:
+jQuery, babel.js, Moment.js
+
+Standards: HTML5, CSS3, Javascript, PHP
+
+
+TOOLS
+-----
+
+Visual Studio Code - Text editor
+sublimetext.com
+
+Figma - Graphics editor
+figma.com
+
+Illustrator & Photoshop - Graphics editor
+adobe.com
+
+Slack - Emojis and GIFs
+slack.com
+
+
+FONTS
+-----
+
+GT Sectra
+by Marc Kappeler (Moire�), Dominik Huber (Moire�), Noe�l Leu 
+grillitype.com/typeface/gt-sectra
+
+Haptik
+by Reto Moser, Tobias Rechsteiner
+grillitype.com/typeface/gt-haptik
+
+Roboto Mono
+by Christian Robertson
+fonts.google.com/specimen/Roboto

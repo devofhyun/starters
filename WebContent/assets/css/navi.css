@@ -1,0 +1,299 @@
+/* 내비 css */
+
+/* 폰트 */
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+html {
+    overflow-x: hidden;
+}
+.container {
+	padding: 0 15px!important;
+}
+
+.modal-open .modal {
+    padding-right: 0!important;
+}
+body {
+	margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+	padding: 0;
+}
+
+div#top {
+    position: sticky;
+    top: 0;
+    height: 30px;
+    z-index: 999;
+}
+
+.navbar-brand img {
+	height: 35px;
+	transition: .5s;
+}
+
+#top ul, #navi ul {
+    position: sticky;
+    height: 30;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    overflow: hidden;
+    top: 0;
+    z-index: 1000;
+}
+
+#top a{
+text-decoration: none;
+color: #000;
+padding-left: 5px;
+padding-right: 5px;
+font-size: 14px;
+}
+
+#top p {
+	display: inline;
+	font-size: 14px;
+	color: #000;
+	line-height: 2.5;
+}
+
+#logout:hover, #login:hover, #register:hover {
+	text-decoration : underline;
+}
+
+#top li {
+list-style-type: none;
+float: right;
+padding: 0 0 3px 0;
+	line-height: 0;
+}
+
+#top p.nim{
+	display: inline;
+	color: #000;
+}
+
+/* 네비바 컬러 */
+#bgbg {
+    background-color: #fff!important;
+    position: sticky!important;
+	top: 0px;
+	height: 57px;
+	width: 100%;    
+	padding: 10 20;
+}
+
+/* 네비바 링크 a 컬러 */
+#bgbg .navbar-nav .nav-link {
+	color: #000;
+	font-size: 18px;
+	cursor: pointer;
+	padding: 10;
+}
+
+button.navbar-toggler.collapsed,
+button.navbar-toggler,
+button.navbar-toggler:focus {
+    border: 0;
+    outline: 0;
+}
+
+.dropdown-menu {
+	right: -10;
+    left: auto;
+    min-width: 130;
+    top: 45;
+    border-radius: 0;
+    border: 0;
+    padding: 0;
+}
+
+a.dropdown-item {
+    text-align: center;
+    padding: 10;
+    font-size: 15px;
+}
+
+.navbar-collapse.collapse.show a.dropdown-item:hover{
+	color: #000;
+	background-color: rgba(90, 98, 104, 0);
+	text-decoration: underline;
+}
+
+
+.nav-item.show .dropdown-toggle::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: 0;
+    border-right: .3em solid transparent;
+    border-bottom: .3em solid;
+    border-left: .3em solid transparent;
+}
+
+
+ul.navbar-nav.mr-auto.justify-content-end {
+	width:100%
+}
+
+@media screen and (min-width: 992px) {
+	a.dropdown-item:hover{
+		color: #000;
+		background-color: rgba(90, 98, 104, 0);
+		text-decoration: underline;
+	}
+}
+
+
+@media screen and (max-width: 991px) {
+	a.nav-link:hover {
+	    text-decoration: underline;
+	}
+	
+	/* collapse가 show일때 */
+	div#navbarsExample04 {
+	    top: -1000;
+	    position: absolute;
+	    transition: .5s;
+	    transform-style: preserve-3d;
+	}
+	div#navbarsExample04.show {
+        display: block;
+	    color: #000;
+	    position: absolute;
+	    top: 50;
+	    padding: 10 30;
+	    right: 0;
+	    width: 100%;
+	    text-align: right;
+	    transition: 1s;
+	    transform-style: preserve-3d;
+	    background-color: rgba(255, 255, 255, .8);
+/*     background-image: linear-gradient(180deg,
+    							rgba(90, 98, 104, 1) 0%,
+    							rgba(90, 98, 104, .7) 50% , 
+    							rgba(90, 98, 104, .1) 80%, 
+    							rgba(90, 98, 104, 0) 100%); */
+	}
+	
+	.navbar-collapse.collapse.show .dropdown-menu {
+	    border: 0;
+	    background-color: rgba(0,0,0,0);
+	}
+	
+	a.dropdown-item,
+	a.dropdown-item:hover{
+		color: #000;
+		background-color: rgba(90, 98, 104, 0) 0%;
+	}
+	
+	.navbar-collapse.collapse.show a.dropdown-item:hover{
+		color: #000;
+		background-color: rgba(90, 98, 104, 0);
+		text-decoration: none;
+	}
+	a.dropdown-item:hover:after {
+	    content: "";
+	    position: absolute;
+	    width: 3px;
+	    height: 25px;
+	    background-color: #000;
+	    right: -10;
+	}
+	.navbar-brand{
+	    padding: 0px;
+	}
+
+	
+}
+
+@media screen and (min-width: 641px) and (max-width:991px){
+	#bgbg .navbar-nav .nav-link
+	 {
+		color:#000;
+		font-size: 2vh;
+	}	
+	a.dropdown-item {
+    	text-align: right;
+	    font-size: 1.7vh;
+	}
+}
+
+@media screen and (max-width: 640px){
+	.navbar-brand img {
+		 height: 25px;
+	}
+	
+	#bgbg .navbar-nav .nav-link{
+	    color: #000;
+	    font-size: 15px;
+	}	
+	
+	a.dropdown-item {
+    	text-align: right;
+	    font-size: 12px;
+	}
+	div#navbarsExample04.show {
+		top: 50;
+	    padding: 10;
+	}
+	
+	a.dropdown-item:hover:after {
+	    content: "";
+	    position: absolute;
+	    width: 3px;
+	    height: 18px;
+	    background-color: #000;
+	    right: -10;
+	}
+	
+	h2 strong {
+	    font-size: 2rem;
+	}
+}
+
+
+/* 드롭다운 버튼 */
+button.navbar-toggler {
+    position: relative;
+    right: 0;
+    width: 30px;
+    height: 30px;
+}
+
+span.navbar-icon {
+    position: absolute;
+    height: 3px;
+    background-color: #000;
+    width: 25px;
+    transition: .7s;
+    right: 1px;
+    transform-style: preserve-3d;
+}
+.navbar-toggler span.navbar-icon.top {
+    top: 10px;
+}
+.navbar-toggler span.navbar-icon.bottom {
+    top: 20px;
+}
+
+.navbar-toggler.open span.navbar-icon.middle{
+	display: none;
+}
+.navbar-toggler.open span.navbar-icon.top {
+    transform: rotate(45deg);
+    top: 15px;
+}
+.navbar-toggler.open span.navbar-icon.bottom {
+    transform: rotate(-45deg);
+    top: 15px;
+}
+.nav-item{
+	margin: 0 10px;
+}

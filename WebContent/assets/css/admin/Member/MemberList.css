@@ -1,0 +1,39 @@
+.paging {
+	text-align: center;
+}
+
+.container.Main {
+    margin: 5vh auto;
+}
+.text-body {
+	cursor: pointer;
+}
+
+tbody tr:hover {
+	cursor: pointer;
+	background-color: rgba(0,0,0,.1);
+}
+
+tbody tr a,
+tbody tr a:hover {
+	color: #000;
+}
+
+.table td, .table th {
+    color: #000;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.row.basic-row {
+	float: right;
+    padding: 0 15;
+}
+
+.table {
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
